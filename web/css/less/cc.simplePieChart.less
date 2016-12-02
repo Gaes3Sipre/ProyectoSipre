@@ -1,0 +1,67 @@
+// Simple Pie Charts
+// -----------------------------------------------
+.cc-spc-wrapper{
+	position:relative;
+	.flex-display();
+	.flex-flow(column nowrap);
+	.align-items(center);
+	.justify-content(center);
+
+	svg.cc-spc-svg{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		.rotate(-90deg);
+	}
+	.cc-spc-bar{
+		position:absolute;
+		z-index:2;
+		//stroke:@brand-default;
+		transform-origin:center;
+		.transition(all 0.4s @animation-type);
+	}
+	.cc-spc-track{
+		position:absolute;
+		z-index:1;
+		stroke:@brand-default-light;
+	}
+	.cc-spc-chart-percent{
+		font-size:24px;
+	}
+}
+
+
+.cc-spc-variant(@color){
+	.color-light(@color);
+	.cc-spc-wrapper{
+		.cc-spc-bar{
+			stroke:@color;
+		}
+	}
+	&.inherit-track-color{
+		.cc-spc-wrapper{
+			.cc-spc-track{
+				stroke:@color-light;
+			}
+		}
+	}
+}
+
+
+
+
+.cc-spc-primary{
+	.cc-spc-variant(@brand-primary);
+}
+.cc-spc-success{
+	.cc-spc-variant(@brand-success);
+}
+.cc-spc-info{
+	.cc-spc-variant(@brand-info);
+}
+.cc-spc-warning{
+	.cc-spc-variant(@brand-warning);
+}
+.cc-spc-danger{
+	.cc-spc-variant(@brand-danger);
+}

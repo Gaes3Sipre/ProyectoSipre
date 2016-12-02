@@ -1,0 +1,6 @@
+// Badges
+// --------------------------------------------------
+.badge-variant(@color; @background) {
+	background-color: @background;
+	color: contrast(@background, @color, @white, @color-threshold);
+}

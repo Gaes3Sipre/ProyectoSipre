@@ -1,0 +1,15 @@
+// Labels Variants
+// --------------------------------------------------
+// Overiddes bootstraps '.label-variant'.
+
+.label-variant(@color,@background) {
+    color: contrast(@background, @color, @white, @color-threshold);
+    background-color: @background;
+
+    &[href] {
+        &:hover,
+        &:focus {
+            background-color: darken(@background, 10%);
+        }
+    }
+}

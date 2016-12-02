@@ -1,0 +1,89 @@
+//
+// Labels
+// --------------------------------------------------
+.label {
+	padding: 0px 6px;
+	text-align: center;
+	font-size: 15px;
+	font-weight:normal;
+	line-height:20px;
+	//line-height: inherit;
+	//position: absolute;
+	right: 15px;
+	box-sizing: border-box;
+	min-width: 45px;
+	color: #757575;
+	display:inline-block;
+	.border-radius(@label-border-radius);
+
+	a&{
+		&:hover,
+		&:focus {
+			//color: @label-link-hover-color;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+}
+
+
+// Colors
+// Contextual variations (linked labels get darker on :hover)
+
+.label-default-bright{
+	.label-variant(@gray-lighter; @brand-default-bright);
+}
+.label-default-light {
+	.label-variant(@gray-light2; @brand-default-light); 
+}
+.label-default-dark {
+	.label-variant(@brand-default-dark; @brand-default-dark);
+}
+
+
+
+.label-primary-bright {
+	.label-variant(@brand-primary-bright; @brand-primary-bright);
+}
+.label-primary-light {
+	.label-variant(@brand-primary-light; @brand-primary-light);
+}
+.label-primary-dark {
+	.label-variant(@brand-primary-dark; @brand-primary-dark);
+}
+
+
+
+.label-accent-bright {
+	.label-variant(@brand-accent-bright; @brand-accent-bright);
+}
+.label-accent-light {
+	.label-variant(@brand-accent-light; @brand-accent-light);
+}
+.label-accent {
+	.label-variant(@brand-accent; @brand-accent);
+}
+.label-accent-dark {
+	.label-variant(@brand-accent-dark; @brand-accent-dark);
+}
+
+
+
+.label-default {
+	.label-variant(@label-default-color; @label-default-bg);
+}
+.label-primary {
+	.label-variant(@label-primary-color; @label-primary-bg);
+}
+.label-success {
+	.label-variant(@label-success-color; @label-success-bg);
+}
+.label-info {
+	.label-variant(@label-info-color; @label-info-bg);
+}
+.label-warning {
+	.label-variant(@label-warning-color; @label-warning-bg);
+}
+.label-danger {
+	.label-variant(@label-danger-color; @label-danger-bg);
+}

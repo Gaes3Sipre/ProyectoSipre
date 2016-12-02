@@ -1,0 +1,175 @@
+Información de versión
+ Microsoft JDBC Driver 6.0 para SQL Server
+ mayo de 2016
+
+------------
+INTRODUCCIÓN
+------------
+Este archivo contiene información de última hora u otra
+información importante que complementa la documentación
+de Microsoft JDBC
+ Driver 6.0 para SQL Server. Debe leer este archivo en su totalidad antes
+
+de instalar el controlador JDBC.
+
+Sus comentarios son muy importantes y haremos lo posible para responderle 
+puntualmente. Para más información sobre cómo hacer llegar sus comentarios mediante los blogs y los
+foros de Internet del controlador JDBC,
+ consulte la página de Microsoft
+Driver 6.0 para SQL Server en http://msdn.microsoft.com/data/jdbc.
+
+
+------------
+INSTALACIÓN
+------------
+Las instrucciones para instalar el controlador JDBC se encuentran en install.txt.  Consulte este archivo si
+ desea obtener información sobre cómo instalar el controlador en los sistemas operativos Windows y Unix.
+
+
+---------------------------
+SISTEMAS OPERATIVOS ADMITIDOS
+---------------------------
+Sistemas operativos compatibles con Microsoft JDBC Driver 6.0 para SQL Server:
+  Windows Server 2008 SP2
+  Windows Server 2008 R2 SP1
+  Windows Server 2012
+  Windows Server 2012 R2
+  Windows Vista SP2
+  Windows 7 SP1
+  Windows 8
+  Windows 8.1
+  Windows 10
+  Linux
+  Unix
+
+Esta lista es un ejemplo de algunos de los sistemas operativos admitidos. El controlador JDBC se ha diseñado
+ para funcionar en cualquier sistema operativo que admita el uso de una máquina virtual Java (JVM). No obstante, solo
+ se han probado los sistemas operativos Oracle Solaris (x86), SUSE Linux y Windows Vista Service Pack 2 o
+ versiones posteriores.
+
+
+----------------
+CONTENIDO DE LA VERSIÓN
+----------------
+El archivo zip o tar ejecutable de Microsoft JDBC Driver 6.0 para SQL Server desempaqueta los siguientes archivos
+ en las ubicaciones especificadas, relativas al directorio de instalación seleccionado:
+
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\install.txt
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\release.txt
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\license.txt
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\sqljdbc.jar
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\sqljdbc.jar
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\sqljdbc41.jar
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\sqljdbc42.jar
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\auth\x86\sqljdbc_auth.dll
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\auth\x64\sqljdbc_auth.dll
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\samples\<archivos de ejemplo...>
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\xa\xa_install.sql
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\xa\x86\sqljdbc_xa.dll
+<directorio de instalación>\sqljdbc_<versión>\<idioma>\xa\x64\sqljdbc_xa.dll
+
+Para más información sobre cada componente, consulte la documentación en línea
+ de Microsoft JDBC Driver para SQL Server: 
+https://msdn.microsoft.com/en-us/library/dn197850(v=sql.10).aspx
+
+Documentación:
+-------------
+En este paquete se incluye esta información de versión, las instrucciones de instalación y los términos de licencia. 
+El resto de la documentación se puede encontrar en línea.
+
+Tenga en cuenta que los archivos de ayuda sin conexión se han suspendido. 
+
+
+Archivos JAR:
+---------
+Para ofrecer compatibilidad con versiones anteriores y posibles escenarios de actualización, el controlador JDBC 6.0 incluye
+ cuatro bibliotecas de clases JAR en cada paquete de instalación: sqljdbc.jar, sqljdbc4.jar, sqljdbc41.jar
+ y sqljdbc42.jar.  
+
+Nota: sqljdbc.jar y sqljdbc4.jar se proporcionan solo de cara a la compatibilidad con versiones anteriores, pero no
+ contienen las nuevas características que se incluyen en las versiones 4.1 y 4.2.  Solo sqljdbc41.jar y sqljdbc42.jar
+ contienen las nuevas características.
+
+
+Archivos específicos de características:
+---------
+Se incluyen componentes de Azure Active Directory y Autenticación integrada (en Windows) en el directorio auth.
+
+Se incluyen componentes de transacciones distribuidas de JDBC en el directorio xa.
+
+
+Ejemplos:
+-------
+Se incluyen aplicaciones de ejemplo que muestran diversas características del controlador JDBC en el directorio samples
+. Para más información sobre cada ejemplo y cómo ejecutarlo, consulte la documentación en 
+línea.
+
+
+-----------
+LISTA DE CAMBIOS
+-----------
+Cambios entre la versión 4.2 y la 6.0:
+
+Nueva característica: Always Encrypted. Los desarrolladores de aplicaciones ahora pueden usar la característica Always Encrypted (AE) que está
+ disponible desde el CTP de SQL Server 2016 (o superior). El controlador JDBC permite la característica Always Encrypted al cifrar y descifrar de forma transparente
+ datos confidenciales almacenados en columnas de base de datos cifradas de SQL Server. Para más información
+, consulte la documentación de MSDN sobre el uso de Always Encrypted con un controlador JDBC. 
+
+Nueva característica: Nombre de dominio internacionalizado. El controlador JDBC ahora admite nombres de dominio internacionalizados (IDN) como
+ nombres de servidor e instancia. Para más información, consulte la documentación de MSDN sobre el uso de IDN con un controlador JDBC.
+
+Nueva característica: Parámetros con valores de tabla. Los parámetros con valores de tabla proporcionan una manera fácil de serializar varias filas de datos de
+ una aplicación cliente en SQL Server sin necesidad de ir y volver repetidas veces o de una lógica especial de servidor para procesar los datos. 
+Puede usar parámetros con valores de tabla para encapsular filas de datos en una aplicación cliente y enviar los datos al servidor en un
+ único comando con parámetros. Para más información, consulte la documentación de MSDN sobre los parámetros con valores de tabla.
+
+Nueva característica: Azure Active Directory (AAD). La autenticación de AAD es un mecanismo que permite conectar con Base de datos SQL de Azure v12 mediante
+ identidades en AAD. Utilice la autenticación de AAD para administrar identidades de usuarios de base de datos de manera central y como una alternativa a la autenticación de SQL
+. El controlador JDBC 6.0 le permite especificar las credenciales de AAD en la cadena de conexión de JDBC
+ para conectarse a Azure SQL DB. Para más información, consulte la documentación de MSDN sobre cómo configurar las propiedades de conexión para el controlador JDBC.
+
+Mejora: Grupos de disponibilidad AlwaysOn (AG). El controlador ahora admite conexiones transparentes a Grupos de disponibilidad
+ AlwaysOn. El controlador detecta rápidamente la topología AlwaysOn actual de su infraestructura de servidor y conecta con el
+ servidor activo actual forma transparente. Para más información, consulte la documentación de MSDN sobre cómo configurar las propiedades de conexión para
+ el controlador JDBC.
+
+Mejora: el controlador JDBC ahora es compatible con la recuperación de metadatos de parámetros con instrucciones preparadas para consultas complejas
+ como combinaciones y subconsultas. Tenga en cuenta que esta mejora solo está disponible cuando se usa SQL Server 2012 y versiones más recientes.
+
+
+------------
+PROBLEMAS CONOCIDOS
+------------
+Estos son los problemas conocidos de Microsoft JDBC Driver 6.0 para SQL Server:
+
+1) LIMITACIONES DE METADATOS DE PARÁMETROS AL USAR SQL SERVER 2008 O 2008 R2
+
+1.a) PreparedStatement.getParameterMetadata() inicia una SQLException cuando se 
+usa con una consulta MERGE con parámetros.
+1.b) Los metadatos de parámetros para instrucciones preparadas no funcionan con consultas con combinaciones y subconsultas.
+
+
+2) Kerberos de Java y las máquinas virtuales Java de IBM
+
+Si está trabajando en entornos de Windows, quizás tenga que especificar el nombre de la entidad de seguridad (principalname) en el
+ archivo de configuración para que Kerberos de Java funcione. Por ejemplo: 
+SQLJDBCDriver {
+  Se requiere com.ibm.security.auth.module.Krb5LoginModule
+  seDefaultCcache=true
+  credsType=initiator
+  principal=principalname@principaldomain;
+};
+
+
+3) QUITAR CONEXIONES CON SQL AZURE
+
+Al conectar con SQL Azure, un componente de red (como 
+un firewall) puede terminar las conexión inactivas tras un
+período de inactividad. Para evitar que un componente de red elimine las conexiones inactivas,
+ se debe establecer la siguiente configuración del Registro (o su equivalente si no es Windows) en el sistema operativo
+ donde esté cargado el controlador:
+           
+Configuración del Registro                                                                   Valor recomendado
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveTime            30000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveInterval         1000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\TcpMaxDataRetransmission  10

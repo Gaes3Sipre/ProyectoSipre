@@ -1,0 +1,69 @@
+//////////////////////////////////////////////////////////////////
+// Snackbar Plugin v1.0                                         //
+// http://www.cerocreativo.cl                                   //
+//                                                              //
+// Snackbar notifications inspired by Google's Material Design  //
+//                                                              //
+// Licensed under the MIT license.                              //
+// http://www.opensource.org/licenses/mit-license.php           //
+//                                                              //
+// Copyright (c) 2015 Paulo Mendez,                             //
+// http://www.cerocreativo.cl                                   //
+//  http://www.rockandthemes.com                                //
+//////////////////////////////////////////////////////////////////
+
+.snackbar{
+	position:fixed;
+	bottom:0px;
+	left:50%;
+	height:auto;
+	min-height:48px;
+	min-width:288px;
+	max-width:568px;
+	font-size:14px;
+	background-color:#323232; // Default by google
+	//background-color:fade(@black,87%);
+	padding:0px 24px;
+	z-index:44;
+	display:flex;
+	flex-direction:row;
+	flex-grow:0;
+	.translateX(-50%);
+	.translateY(100%);
+	.border-radius(2px);
+	.transition(all 0.4s @animation-type);
+
+	.snackbar-content{
+		display:flex;
+		flex-grow:1;
+		align-items:center;
+		color:@white;
+		.opacity(0);
+		.transition(all 0.9s @animation-type);
+
+		.snackbar-message{
+			flex-grow:1;
+			line-height:16px;
+			padding:24px 0;
+
+			&.snackbar-multiline{
+				padding:14px 0;
+			}
+		}
+
+		.btn{
+			height:36px;
+			margin-left:48px;
+			margin-right:0;
+		}
+	}
+
+	&.open{
+		.translateX(-50%);
+		.translateY(0);
+
+		.snackbar-content{
+			.opacity(1);
+		}
+	}
+}

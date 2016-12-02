@@ -1,0 +1,87 @@
+// Transformations
+// --------------------------------------------------
+.transform(@transform...){
+	-moz-transform+_:@transform;
+	-ms-transform+_:@transform;
+	-o-transform+_:@transform;
+	-webkit-transform+_:@transform;
+	transform+_:@transform;
+}
+.scale(@ratio) {
+	-webkit-transform+_: scale(@ratio);
+	-ms-transform+_: scale(@ratio);
+	transform+_: scale(@ratio);
+}
+.scale(@ratioX; @ratioY) {
+	-webkit-transform+_: scale(@ratioX, @ratioY);
+	-ms-transform+_: scale(@ratioX, @ratioY);
+	transform+_: scale(@ratioX, @ratioY);
+}
+.scaleX(@ratio) {
+	-webkit-transform+_: scaleX(@ratio);
+	-ms-transform+_: scaleX(@ratio);
+	transform+_: scaleX(@ratio);
+}
+.scaleY(@ratio) {
+	-webkit-transform+_: scaleY(@ratio);
+	-ms-transform+_: scaleY(@ratio);
+	transform+_: scaleY(@ratio);
+}
+.skew(@x; @y) {
+	-webkit-transform+_: skewX(@x) skewY(@y);
+	-ms-transform+_: skewX(@x) skewY(@y);
+	transform+_: skewX(@x) skewY(@y);
+}
+.translate(@x; @y...) {
+	-webkit-transform+_: translate(@x, @y);
+	-ms-transform+_: translate(@x, @y);
+	transform+_: translate(@x, @y);
+}
+.translateX(@x) {
+	-webkit-transform+_: translateX(@x);
+	-ms-transform+_: translateX(@x);
+	transform+_: translateX(@x);
+}
+.translateY(@y) {
+	-webkit-transform+_: translateY(@y);
+	-ms-transform+_: translateY(@y);
+	transform+_: translateY(@y);
+}
+.translate3d(@x; @y; @z) {
+	-webkit-transform+_: translateX(@x) translateY(@y) translateZ(@z);
+	-ms-transform+_: translateX(@x) translateY(@y);
+	transform+_: translateX(@x) translateY(@y) translateZ(@z);
+}
+.rotate(@degrees...) {
+	-webkit-transform+_:	rotate(@degrees);
+	-moz-transform+_:		rotate(@degrees);
+	-ms-transform+_:		rotate(@degrees);
+	-o-transform+_:			rotate(@degrees);
+	transform+_: 			rotate(@degrees);
+}
+.rotateX(@degrees) {
+	-webkit-transform+_: 	rotateX(@degrees);
+	-ms-transform+_: 		rotateX(@degrees);
+	transform+_: 			rotateX(@degrees);
+}
+.rotateY(@degrees) {
+	-webkit-transform+_: 	rotateY(@degrees);
+	-ms-transform+_: 		rotateY(@degrees);
+	transform+_: 			rotateY(@degrees);
+}
+.perspective(@perspective) {
+	-webkit-perspective+_: 	@perspective;
+	-moz-perspective+_:		@perspective;
+	perspective+_: 			@perspective;
+}
+.perspective-origin(@perspective) {
+	-webkit-perspective-origin+_: 	@perspective;
+	-moz-perspective-origin+_: 		@perspective;
+	perspective-origin+_: 			@perspective;
+}
+.transform-origin(@origin) {
+	-webkit-transform-origin+_: 	@origin;
+	-moz-transform-origin+_:		@origin;
+	-ms-transform-origin+_:			@origin;
+	transform-origin+_:				@origin;
+}

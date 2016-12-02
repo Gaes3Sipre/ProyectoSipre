@@ -1,0 +1,22 @@
+////////////////
+// ERROR Page //
+////////////////
+#page-error{
+	overflow:hidden;
+	background:@errorbox-page-bg;
+	background-size:cover;
+}
+#error-box{
+	font-size:15px;
+	width: @errorbox-width;
+	//height: @errorbox-height;
+	margin: 50vh auto 0 auto;
+
+	.error-box-wrapper{
+		transform: translateY(-50%);
+		justify-content: center;
+		.flex-display();
+		.flex-flow(column);
+		.align-items(center);
+	}
+}

@@ -1,0 +1,132 @@
+//////////////
+// Logo Box //
+//////////////
+.logo-box{
+	&,
+	.logo{
+		.flex-display();
+		.justify-content(center);
+		.align-items(center);
+		.align-content(center);
+	}
+	.logo{
+		width: @logo-box-width;
+		height: @logo-box-width;
+		font-size:@logo-box-font-size;
+		font-weight: 500;
+		color:@white;
+		background-color:@gray-base;
+		.border-radius(@logo-box-border-radius);
+	}
+	.logo-text{
+		color: @brand-primary;
+		margin-left: 16px;
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+
+	//Sizes
+	&.logo-box-xs{
+		.logo{
+			width:(@logo-box-width / 4);
+			height:(@logo-box-width / 4);
+			font-size:(@logo-box-font-size / 4);
+		}
+		.logo-text{
+			font-size:(@logo-box-font-size / 4);
+		}
+	}
+	&.logo-box-sm{
+		.logo{
+			width:(@logo-box-width / 3);
+			height:(@logo-box-width / 3);
+			font-size:(@logo-box-font-size / 3);
+		}
+		.logo-text{
+			font-size:(@logo-box-font-size / 3);
+		}
+	}
+	&.logo-box-md{
+		.logo{
+			width:(@logo-box-width / 2);
+			height:(@logo-box-width / 2);
+			font-size:(@logo-box-font-size / 2);
+		}
+		.logo-text{
+			font-size:(@logo-box-font-size / 2);
+		}
+	}
+	&.logo-box-lg{
+		.logo{
+			width: @logo-box-width;
+			height: @logo-box-width;
+			font-size: @logo-box-font-size;
+		}
+		.logo-text{
+			font-size:@logo-box-font-size;
+		}
+	}
+	&.logo-box-xlg{
+		.logo{
+			width:(@logo-box-width * 2);
+			height:(@logo-box-width * 2);
+			font-size:(@logo-box-font-size * 2);
+		}
+		.logo-text{
+			font-size:(@logo-box-font-size * 2);
+		}
+	}
+}
+
+
+// Logo Box Variants Mixin
+// -------------------------------------
+.logo-box-variant(@color){
+	.logo{
+		color:contrast(@color,@text-color,@white,@color-threshold);
+		background-color:@color;
+	}
+}
+
+// Variants
+// -------------------------------------
+.logo-box-primary-bright{
+	.logo-box-variant(@brand-primary-bright);
+}
+.logo-box-primary-light{
+	.logo-box-variant(@brand-primary-light);
+}
+.logo-box-primary{
+	.logo-box-variant(@brand-primary);
+}
+.logo-box-primary-dark{
+	.logo-box-variant(@brand-primary-dark);
+}
+
+.logo-box-accent-bright{
+	.logo-box-variant(@brand-accent-bright);
+}
+.logo-box-accent-light{
+	.logo-box-variant(@brand-accent-light);
+}
+.logo-box-accent{
+	.logo-box-variant(@brand-accent);
+}
+.logo-box-accent-dark{
+	.logo-box-variant(@brand-accent-dark);
+}
+
+
+.logo-box-success{
+	.logo-box-variant(@brand-success);
+}
+.logo-box-info{
+	.logo-box-variant(@brand-info);
+}
+.logo-box-warning{
+	.logo-box-variant(@brand-warning);
+}
+.logo-box-danger{
+	.logo-box-variant(@brand-danger);
+}
