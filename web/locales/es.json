@@ -1,0 +1,174 @@
+{
+	"headerToolbar":{
+		"searchbox":"Buscar",
+		"languageSelector":"Selector de Idioma",
+		"fullscreenToggle":"Actibar Pantalla Completa",
+		"userinfo":{
+			"profile":"Perfil",
+			"settings":"Configuración",
+			"lock":"Bloquear Sesión",
+			"logout":"Cerrar Sesión"
+		}
+	},
+	"userinfo":{
+		"profile":"Perfil",
+		"settings":"Configuración",
+		"lock":"Bloquear Sesión",
+		"logout":"Cerrar Sesión"
+	},
+	"nav": {
+		"general":{
+			"new":"Nuevo",
+			"soon":"Pronto"
+		},
+		"dashboard": "Escritorio",
+		"components": {
+			"components":"Componentes",
+			"accordions":"Acordiones",
+			"alerts":"Alertas",
+			"badges":"Etiquetas",
+			"boxshadow":"Caja Sombreada",
+			"buttons":{
+				"buttons":"Botones",
+				"buttonTypes":"Tipos de Botones",
+				"FABSpeedDial":"FAB Speed Dial",
+				"materialRipple":"Efecto Onda de Tinta"
+			},
+			"breadcrumbs":"Barra de Rastro",
+			"colors":"Colores Material Design",
+			"dropdowns":"Menu Desplegable",
+			"grid":"Rejilla",
+			"icons":{
+				"icons":"Iconos",
+				"material":"Material Design Icons",
+				"fontAwesome":"Font Awesome"
+			},
+			"lists":{
+				"lists":"Listas",
+				"normal":"Lista Normal",
+				"subheader":"Lista Subheader Sticky"
+			},
+			"modals":"Ventana Modal",
+			"menu":"Multi Levels Side Menu",
+			"notifications":{
+				"notifications":"Notificaciones",
+				"snackbars":"Snackbars",
+				"toasts":"Toasts"
+			},
+			"pagination":{
+				"pagination":"Paginación",
+				"paginator":"Paginación",
+				"pager":"Paginador"
+			},
+			"panels":"Paneles",
+			"progressIndicators":{
+				"progressIndicators":"Indicadores de Progreso",
+				"circular":"Circular",
+				"linear":"Linear",
+				"bootstrap":"Bootstrap Progressbar"
+			},
+			"tables":{
+				"tables":"Tablas",
+				"static":"Tabla Estática",
+				"dynamic":"Tabla Dinámica",
+				"responsive":"Tabla Responsive"
+			},
+			"tabs":"Pestañas",
+			"tooltips":"Tooltips",
+			"typography":"Tipografía"
+		},
+		"forms":{
+			"forms":"Formularios",
+			"basic":"Elementos Básicos",
+			"editors":{
+				"editors":"Editores de Texto",
+				"editor1":"Summernote Editor",
+				"editor2":"CKEditor",
+				"editor3":"wysihtml5",
+				"editor4":"Markdown",
+				"editor5":"Simditor",
+				"editor6":"Trumbowyg",
+				"editor7":"MediumEditor"
+			},
+			"codeEditors":{
+				"editors":"Editores de Código",
+				"editor1":"Ace",
+				"editor2":"CodeMirror"
+			},
+			"syntax":{
+				"editors":"Syntax Highlighter",
+				"editor1":"Google Prettify",
+				"editor2":"Prism",
+				"editor3":"Hightlight.js"
+			}
+		},
+		"charts":{
+			"charts":"Gráficos",
+			"chart1":"Sparklines",
+			"chart2":"Peity",
+			"chart3":"Simple Pie Chart",
+			"chart4":"Chartist.js",
+			"chart5":"NVD3",
+			"chart6":"Chart.js"
+		},
+		"other":{
+			"others":"Otras Características",
+			"other1":"Favicon Notifications",
+			"other2":"Sweet Alert",
+			"other3":"Idle Timer",
+			"other4":"Hierarchical Display",
+			"other5":"CSS Animations",
+			"other6":"Google Maps",
+			"other7":"i18n Support",
+			"other8":"Clipboard"
+		},
+		"bac":{
+			"bematAdmin":"Bemat Admin",
+			"bac":"Bemat Admin Core",
+			"layouts":"App Layouts",
+			"skins":"App Skins",
+			"settings":"App Settings",
+			"variations":"App Variations"
+		},
+		"helpers":{
+			"helpers":"Funciones Auxiliares",
+			"classes":"Clases",
+			"functions":"Funciones"
+		},
+		"premadePages":{
+			"premadePages":"Páginas y Apps Prefabricadas",
+			"pages":"Páginas",
+			"authentication":{
+				"authentication":"Autenticación",
+				"forgotPassword":"Recuperar Contraseña",
+				"login":"Inicio de Sesión",
+				"lock":"Bloqueo",
+				"register":"Registro"
+			},
+			"blank":"Página en Blanco",
+			"help":"Ayuda y FAQ",
+			"invoice":"Factura",
+			"maintenance":"Mantención",
+			"pricingTables":"Tabla de Precios",
+			"settings":"Configuración",
+			"errors":{
+				"errors":"Errores",
+				"404":"Error 404",
+				"500":"Error 500"
+			}
+		},
+		"mailbox":{
+			"mailbox":"Mailbox",
+			"inbox":"Entrada",
+			"compose":"Componer",
+			"view":"Ver",
+			"templates":"Plantillas de Email"
+		},
+		"calendar":"Calendario",
+		"multiLevelMenu":"Menu Multi Nivel"
+	},
+	"dashboard1":{
+		"dashboard":"Escritorio",
+		"welcomeMsg":"Bienvenido nuevamente {{username}}"
+	}
+}

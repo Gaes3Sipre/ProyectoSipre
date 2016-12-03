@@ -1,0 +1,134 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+// Bar hairline
+// -------------------------
+
+// Outer container
+.progress-hairline {
+	margin-top: 8px;
+	height: 2px;
+}
+
+// Bar animations
+// -------------------------
+
+// WebKit
+@-webkit-keyframes progress-bar-stripes {
+	from  { background-position: 40px 0; }
+	to    { background-position: 0 0; }
+}
+
+// Spec and IE10+
+@keyframes progress-bar-stripes {
+	from  { background-position: 40px 0; }
+	to    { background-position: 0 0; }
+}
+
+
+// Bar itself
+// -------------------------
+
+// Outer container
+.progress {
+	overflow: hidden;
+	height: @line-height-computed;
+	margin-bottom: @line-height-computed;
+	background-color: @progress-bg;
+	border-radius: @progress-border-radius;
+	.box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+
+	&.progress-xxxs{
+		height:1px;
+	}
+	&.progress-xxs{
+		height:2px;
+	}
+	&.progress-xs{
+		height:4px;
+	}
+	&.progress-sm{
+		height:8px;
+		font-size:10px;
+		line-height:12px;
+	}
+	&.progress-lg{
+		height:16px;
+	}
+	&.progress-xlg{
+		height:24px;
+	}
+	&.progress-xxlg{
+		height:32px;
+	}
+}
+
+// Bar of progress
+.progress-bar {
+	float: left;
+	width: 0%;
+	height: 100%;
+	font-size: @font-size-small;
+	line-height: @line-height-computed;
+	color: @progress-bar-color;
+	text-align: center;
+	background-color: @progress-bar-bg;
+	.box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+	.transition(width .6s ease);
+}
+
+// Striped bars
+//
+// `.progress-striped .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar-striped` class, which you just add to an existing
+// `.progress-bar`.
+.progress-striped .progress-bar,
+.progress-bar-striped {
+	#gradient  .striped();
+	background-size: 40px 40px;
+}
+
+// Call animation for the active one
+//
+// `.progress.active .progress-bar` is deprecated as of v3.2.0 in favor of the
+// `.progress-bar.active` approach.
+.progress.active .progress-bar,
+.progress-bar.active {
+	.animation(progress-bar-stripes 2s linear infinite);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Variations
+// -------------------------
+
+.progress-bar-default-dark {	.progress-bar-variant(@brand-default-dark); }
+.progress-bar-default {			.progress-bar-variant(@brand-default); }
+.progress-bar-default-light{	.progress-bar-variant(@brand-default-light); }
+.progress-bar-default-bright{	.progress-bar-variant(@brand-default-bright); }
+
+.progress-bar-primary-dark {	.progress-bar-variant(@brand-primary); }
+.progress-bar-primary {			.progress-bar-variant(@brand-primary-light); }
+.progress-bar-primary-light {	.progress-bar-variant(@brand-primary-dark); }
+.progress-bar-primary-bright {	.progress-bar-variant(@brand-primary-bright); }
+
+.progress-bar-accent-dark {		.progress-bar-variant(@brand-accent); }
+.progress-bar-accent {			.progress-bar-variant(@brand-accent-light); }
+.progress-bar-accent-light {	.progress-bar-variant(@brand-accent-dark); }
+.progress-bar-accent-bright {	.progress-bar-variant(@brand-accent-bright); }
+
+.progress-bar-success {			.progress-bar-variant(@brand-success); }
+.progress-bar-warning {			.progress-bar-variant(@brand-warning); }
+.progress-bar-danger {			.progress-bar-variant(@brand-danger); }
+.progress-bar-info {			.progress-bar-variant(@brand-info); }

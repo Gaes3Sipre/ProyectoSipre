@@ -1,0 +1,51 @@
+// Sidebar
+// --------------------------------------------------
+
+// Sidebar Scaffolding
+// --------------------------------------------------
+@sidebar-width:						300px;
+@sidebar-width-collapsed:			64px;
+@sidebar-shadow:					0px 0px 5px 0px rgba(0, 0, 0, 0.26);
+@sidebar-padding:					0 0px;// "0 10px" default
+
+//# Sidebar Item
+@sidebar-main-item-ico-gutter:		(@gutter-size * 2 + 4);
+@sidebar-item-height:				48px;
+@sidebar-sub-item-height:			48px;
+@sidebar-main-item-border-radius:	0px; // "4px" default
+@sidebar-main-item-border-top:		none; // "none" default
+@sidebar-main-item-border-bottom:	none; // "none" default
+@sidebar-main-item-margin:			0px 0px; // "2px 0px" default
+@sidebar-sub-item-margin:			0px 0px; // "2px 0px" default
+@menubar-icon-width:				40px;
+
+
+// Userbox Sidebar
+// --------------------------------------------------
+@sidebar-userbox-bg:				@brand-primary url("@{imgpath}bgs/userbox-bg.png") left 40%;
+@sidebar-userbox-color:				fade(@white,80%);
+@sidebar-userbox-height:			@navbar-height*2;
+@sidebar-userbox-padding:			(@gutter-size *2);
+//@sidebar-userbox-border:			1px solid @sidebar-color-darker;
+@sidebar-userbox-border:			none;
+
+
+
+// Sidebar Color Schemes
+// --------------------------------------------------
+
+// Sidebar Light
+@sidebar-bg:						@white;
+@sidebar-bg-hover:					@gray-lightest;
+@sidebar-bg-active:					@gray-lighter;
+@sidebar-color:						@gray-dark;
+@sidebar-color-hover:				@gray-dark;
+@sidebar-item-divider:				fade(@black,87%);
+@sidebar-main-item-ico-color:		@gray-icon;
+@sidebar-color-submenu-line:		@gray-light;
+
+
+// Sidebar Dark
+@sidebar-dark-bg-hover:				lighten(@sidebar-dark-bg, 5%);
+@sidebar-dark-bg-active:			lighten(@sidebar-dark-bg, 7%);
+

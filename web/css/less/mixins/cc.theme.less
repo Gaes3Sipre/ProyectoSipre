@@ -1,0 +1,103 @@
+//////////////////////////////////////////////////////////////
+// Create Theme                                             //
+// Function to create the different color schemes available //
+//////////////////////////////////////////////////////////////
+.create-theme(@name,@rules){
+
+	@rules();
+	.variables();
+
+	body[data-theme="@{name}"] {
+		border: @border;
+		background: @body-bg;
+		color: @color-text;
+
+		header{
+			nav{
+				background-color:@navbar-bg-color;
+				#navbrand{
+					background-color:@logo-bg;
+					a{
+						span{
+							&.icon-flat{
+								color:@logo-ini;
+							}
+							&.icon-board{
+								color:@logo-end;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		#page-wrapper {
+			background-color: @body-bg;
+
+
+			// Left Content - Sidebar
+			//-------------------------------
+			#left-content{
+				background-color: @sidebar-color-bg;
+
+
+				nav#sidebar{
+					color: @sidebar-color-text;
+					padding: @sidebar-padding;
+
+					ul{
+						> li{
+							border-top: @sidebar-main-item-border-top;
+							border-bottom: @sidebar-main-item-border-bottom;
+							.border-radius(@sidebar-main-item-border-radius);
+							margin: @sidebar-main-item-margin;
+						}
+					}
+				}
+			}
+
+			// Right Content - Page
+			//-------------------------------
+			#right-content{
+
+				// Breadcrumbs
+				#breadcrumb{
+					background-color:@breadcrumbs-color-bg;
+					color:@breadcrumbs-color-text;
+					border-top:@breadcrumbs-border-top;
+					border-bottom:@breadcrumbs-border-bottom;
+
+					#reloadbtn{
+						background-color:@breadcrumbs-btn-bg;
+						color:@breadcrumbs-btn-color;
+					}
+
+					ol.breadcrumb{
+						& > li + li:before{
+							color: lighten(@breadcrumbs-color-bg, 20%);
+						}
+						li:last-child,
+						& > .active{
+							color:lighten(@breadcrumbs-color-bg, 30%);
+							font-weight: bold;
+						}
+					}
+				}
+
+				// Page Header
+				section.page-header{
+					.page-title{
+						color:@body-text-color;
+					}
+				}
+			}
+		}
+
+
+		.btn-primary {
+			.btn-variant(primary);
+		}
+
+	}
+
+}

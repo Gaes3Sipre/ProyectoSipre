@@ -1,0 +1,61 @@
+//
+// Pager pagination
+// --------------------------------------------------
+
+
+.pager {
+	padding-left: 0;
+	margin: @pager-margin;
+	list-style: none;
+	text-align: center;
+	display:flex;
+	justify-content:center;
+	
+	li {
+		display: flex;
+		> a,
+		> span {
+			padding: 5px 14px;
+			background-color: @pager-bg;
+			border: 1px solid @pager-border;
+			.border-radius(@border-radius-base);
+		}
+
+		> a:hover,
+		> a:focus {
+			text-decoration: none;
+			background-color: @pager-hover-bg;
+		}
+
+		&.previous {
+			flex:1 1 auto;
+			> a,
+			> span {
+
+			}
+		}
+
+		&.next {
+			flex:1 1 auto;
+			display: flex;
+			flex-flow:column;
+			> a,
+			> span {
+				align-self:flex-end;
+			}
+		}
+
+
+	}
+
+	.disabled {
+		> a,
+		> a:hover,
+		> a:focus,
+		> span {
+			color: @pager-disabled-color;
+			background-color: @pager-bg;
+			cursor: @cursor-disabled;
+		}
+	}
+}

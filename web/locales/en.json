@@ -1,0 +1,174 @@
+{
+	"headerToolbar":{
+		"searchbox":"Search",
+		"languageSelector":"Language Selector",
+		"fullscreenToggle":"Toggle Fullscreen",
+		"userinfo":{
+			"profile":"Profile",
+			"settings":"Settings",
+			"lock":"Lock",
+			"logout":"Log Out"
+		}
+	},
+	"userinfo":{
+		"profile":"Profile",
+		"settings":"Settings",
+		"lock":"Lock",
+		"logout":"Log Out"
+	},
+	"nav": {
+		"general":{
+			"new":"New",
+			"soon":"Soon"
+		},
+		"dashboard": "Dashboard",
+		"components": {
+			"components":"Components",
+			"accordions":"Accordions",
+			"alerts":"Alerts",
+			"badges":"Badges & Labels",
+			"boxshadow":"Boxshadow",
+			"buttons":{
+				"buttons":"Buttons",
+				"buttonTypes":"Button Types",
+				"FABSpeedDial":"FAB Speed Dial",
+				"materialRipple":"Material Ink Ripple"
+			},
+			"breadcrumbs":"Breadcrumbs",
+			"colors":"Colors Material Design",
+			"dropdowns":"Dropdowns",
+			"grid":"Grid",
+			"icons":{
+				"icons":"Icons",
+				"material":"Material Design Icons",
+				"fontAwesome":"Font Awesome"
+			},
+			"lists":{
+				"lists":"Lists",
+				"normal":"Normal Lists",
+				"subheader":"Subheader Sticky"
+			},
+			"modals":"Modals",
+			"menu":"Multi Levels Side Menu",
+			"notifications":{
+				"notifications":"Notifications",
+				"snackbars":"Snackbars",
+				"toasts":"Toasts"
+			},
+			"pagination":{
+				"pagination":"Pagination",
+				"paginator":"Pagination",
+				"pager":"Pager"
+			},
+			"panels":"Panels",
+			"progressIndicators":{
+				"progressIndicators":"Progress Indicators",
+				"circular":"Circular",
+				"linear":"Linear",
+				"bootstrap":"Bootstrap Progressbar"
+			},
+			"tables":{
+				"tables":"Tables",
+				"static":"Static Tables",
+				"dynamic":"Dynamic Tables",
+				"responsive":"Responsive Tables"
+			},
+			"tabs":"Tabs",
+			"tooltips":"Tooltips",
+			"typography":"Typography"
+		},
+		"forms":{
+			"forms":"Forms",
+			"basic":"Basic Form Elements",
+			"editors":{
+				"editors":"Text Editors",
+				"editor1":"Summernote Editor",
+				"editor2":"CKEditor",
+				"editor3":"wysihtml5",
+				"editor4":"Markdown",
+				"editor5":"Simditor",
+				"editor6":"Trumbowyg",
+				"editor7":"MediumEditor"
+			},
+			"codeEditors":{
+				"editors":"Code Editors",
+				"editor1":"Ace",
+				"editor2":"CodeMirror"
+			},
+			"syntax":{
+				"editors":"Syntax Highlighter",
+				"editor1":"Google Prettify",
+				"editor2":"Prism",
+				"editor3":"Hightlight.js"
+			}
+		},
+		"charts":{
+			"charts":"Charts",
+			"chart1":"Sparklines",
+			"chart2":"Peity",
+			"chart3":"Simple Pie Chart",
+			"chart4":"Chartist.js",
+			"chart5":"NVD3",
+			"chart6":"Chart.js"
+		},
+		"other":{
+			"others":"Other Features",
+			"other1":"Favicon Notifications",
+			"other2":"Sweet Alert",
+			"other3":"Idle Timer",
+			"other4":"Hierarchical Display",
+			"other5":"CSS Animations",
+			"other6":"Google Maps",
+			"other7":"i18n Support",
+			"other8":"Clipboard"
+		},
+		"bac":{
+			"bematAdmin":"Bemat Admin",
+			"bac":"Bemat Admin Core",
+			"layouts":"App Layouts",
+			"skins":"App Skins",
+			"settings":"App Settings",
+			"variations":"App Variations"
+		},
+		"helpers":{
+			"helpers":"Helper Functions",
+			"classes":"Helper Classes",
+			"functions":"Helper Functions"
+		},
+		"premadePages":{
+			"premadePages":"Premade Pages & Apps",
+			"pages":"Pages",
+			"authentication":{
+				"authentication":"Authentication",
+				"forgotPassword":"Forgot Password",
+				"login":"Login",
+				"lock":"Lock Page",
+				"register":"Register"
+			},
+			"blank":"Blank Page",
+			"help":"Help & FAQ",
+			"invoice":"Invoice",
+			"maintenance":"Maintenance",
+			"pricingTables":"Pricing Tables",
+			"settings":"Settings",
+			"errors":{
+				"errors":"Errors",
+				"404":"Error 404",
+				"500":"Error 500"
+			}
+		},
+		"mailbox":{
+			"mailbox":"Mailbox",
+			"inbox":"Inbox",
+			"compose":"Compose",
+			"view":"View",
+			"templates":"Email Templates"
+		},
+		"calendar":"Calendar",
+		"multiLevelMenu":"Multi Level Menu"
+	},
+	"dashboard1":{
+		"dashboard":"Dashboard",
+		"welcomeMsg":"Welcome back {{username}}"
+	}
+}

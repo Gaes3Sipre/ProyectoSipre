@@ -1,0 +1,101 @@
+// Form Control Validation
+// --------------------------------------------------
+.form-control-validation(@text-color: #555; @border-color: #ccc; @background-color: #f5f5f5) {
+	// Color the label and help text
+	> label,
+	.help-block,
+	.control-label,
+	.radio,
+	.checkbox,
+	.radio-inline,
+	.checkbox-inline,
+	&.radio label,
+	&.checkbox label,
+	&.radio-inline label,
+	&.checkbox-inline label  {
+		color: @text-color;
+	}
+	// Set the border and box shadow on specific inputs to match
+	.form-control {
+		border-color: @border-color;
+		.box-shadow(none);
+		&:focus {
+			border-color: darken(@border-color, 10%);
+			.box-shadow(none);
+		}
+	}
+	// Set validation states also for addons
+	.input-group-addon {
+		color: @text-color;
+		border-color: @border-color;
+		background-color: @background-color;
+	}
+	// Optional feedback icon
+	.form-control-feedback {
+		color: @text-color;
+	}
+}
+
+
+// Form control sizing
+// --------------------------------------------------
+
+.input-size(@input-height; @padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+	height: @input-height;
+	padding: @padding-vertical @padding-horizontal;
+	font-size: @font-size;
+	line-height: @line-height;
+	border-radius: @border-radius;
+
+	select& {
+		height: @input-height;
+		line-height: @input-height;
+	}
+
+	textarea&,
+	select[multiple]& {
+		height: auto;
+	}
+	
+	~ label {
+		.floating-label & {
+			font-size: @font-size;
+		}
+	}
+}
+
+
+
+// Alert variations
+// -------------------------
+
+.form-alert-variant(@color) {
+    .help-block  {
+        color: @color;
+        opacity: 1;
+    }
+    .form-control {
+        border-bottom-color: @color;
+    }
+    .form-control:focus, .form-control.filled {
+        border-bottom-color: @color;
+        ~ label {
+            color: @color;
+        }
+    }
+    .form-control ~ label,
+    .form-control ~ .form-control-line {
+        color: @color;
+        &:after{
+            background-color: @color;
+        }
+    }
+    label,
+    .control-label,
+    .form-control-feedback {
+        color: @color;
+        .form-horizontal & {
+            opacity: 1;
+        }
+    }
+}

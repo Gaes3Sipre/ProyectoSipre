@@ -1,0 +1,48 @@
+// --------------------------------------------------
+// BEMAT ADMIN v1.x Color Themes
+// 
+// Name: Example Theme
+// Version: 1.0
+// --------------------------------------------------
+
+// Main Colors
+// -----------------
+@brand-default:						@gray-lighter;
+@brand-primary: 					#009688;
+
+
+// Brand Accent
+// -----------------
+@brand-accent:						#FF5722;
+
+
+
+// Brand Inverse
+// -----------------
+//@brand-inverse:					hex; // Set the color here
+.brand-inverse-color(@brand-primary); // Or use this mixin, that automatically returns the "@brand-inverse" variable
+
+
+
+// Contextual Colors
+// -----------------
+@brand-success:						#4CAF50;
+@brand-info:						#03A9F4;
+@brand-warning:						#FF9800;
+@brand-danger:						#F44336;
+
+
+
+// Dark Colors
+// -----------------
+
+// Here you can set the colors manually, or apply any calculations you want
+
+// Navbar Dark/Inverse
+@nbb-s:								hsvsaturation(@brand-inverse);
+@nbb-v:								hsvvalue(@brand-inverse);
+
+@navbar-dark-bg:					hsv(hue(@brand-inverse),@nbb-s,@nbb-v - 2);
+
+// Sidebar Dark
+@sidebar-dark-bg:					hsv(hue(@brand-inverse),@nbb-s,@nbb-v + 6);

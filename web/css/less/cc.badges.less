@@ -1,0 +1,98 @@
+//
+// Badges
+// --------------------------------------------------
+.badge {
+	//display: inline-block;
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	position: relative;
+	font-weight: 500;
+	font-size: 12px;
+	width:24px;
+	height:24px;
+	line-height:24px;
+	padding:0;
+	border-radius: 50%;
+	background-color: @badge-default-bg;
+	color: @badge-default-color;
+
+	#sidebar &{
+		position:absolute;
+		top:0px;
+		right:15px;
+	}
+
+	#navbar-wrapper &{
+		position:absolute;
+		top:5px;
+		right:5px;
+	}
+}
+
+
+
+// Badge variants
+// -------------------------
+
+.badge-default-bright{
+	.badge-variant(@gray-lighter; @brand-default-bright);
+}
+.badge-default-light {
+	.badge-variant(@gray-light2; @brand-default-light); 
+}
+.badge-default-dark {
+	.badge-variant(@brand-default-dark; @brand-default-dark);
+}
+
+
+
+.badge-primary-bright {
+	.badge-variant(@brand-primary-bright; @brand-primary-bright);
+}
+.badge-primary-light {
+	.badge-variant(@brand-primary-light; @brand-primary-light);
+}
+.badge-primary-dark {
+	.badge-variant(@brand-primary-dark; @brand-primary-dark);
+}
+
+
+
+.badge-accent-bright {
+	.badge-variant(@brand-accent-bright; @brand-accent-bright);
+}
+.badge-accent-light {
+	.badge-variant(@brand-accent-light; @brand-accent-light);
+}
+.badge-accent {
+	.badge-variant(@brand-accent; @brand-accent);
+}
+.badge-accent-dark {
+	.badge-variant(@brand-accent-dark; @brand-accent-dark);
+}
+
+
+
+.badge-default {
+	.badge-variant(@badge-default-color; @badge-default-bg);
+}
+.badge-primary {
+	.badge-variant(@badge-primary-color; @badge-primary-bg);
+}
+.badge-success {
+	.badge-variant(@badge-success-color; @badge-success-bg);
+}
+.badge-info {
+	.badge-variant(@badge-info-color; @badge-info-bg);
+}
+.badge-warning {
+	.badge-variant(@badge-warning-color; @badge-warning-bg);
+}
+.badge-danger {
+	.badge-variant(@badge-danger-color; @badge-danger-bg);
+}
+
+

@@ -1,0 +1,65 @@
+/* Ready Made Color Alternatives */
+
+@color1: violet;
+@color2: pink;
+
+
+
+.create-color(green,@color1);
+.create-color(violet,@color2);
+
+
+
+
+
+
+
+
+
+@import "mixins/material-color-class.less";
+
+// Material Design Color Palette
+// -------------------------------------------------------------
+.create-material-design-color-palette(on);
+
+.create-material-design-color-palette(@state) when (@state = on){
+	.material-color-class("red");
+	.material-color-class("pink");
+	.material-color-class("purple");
+	.material-color-class("deep-purple");
+	.material-color-class("indigo");
+	.material-color-class("blue");
+	.material-color-class("light-blue");
+	.material-color-class("cyan");
+	.material-color-class("teal");
+	.material-color-class("green");
+	.material-color-class("light-green");
+	.material-color-class("lime");
+	.material-color-class("yellow");
+	.material-color-class("amber");
+	.material-color-class("orange");
+	.material-color-class("deep-orange");
+	.material-color-class("brown");
+	.material-color-class("grey");
+	.material-color-class("blue-grey");
+
+	.material-color-class("red";background-color);
+	.material-color-class("pink";background-color);
+	.material-color-class("purple";background-color);
+	.material-color-class("deep-purple";background-color);
+	.material-color-class("indigo";background-color);
+	.material-color-class("blue";background-color);
+	.material-color-class("light-blue";background-color);
+	.material-color-class("cyan";background-color);
+	.material-color-class("teal";background-color);
+	.material-color-class("green";background-color);
+	.material-color-class("light-green";background-color);
+	.material-color-class("lime";background-color);
+	.material-color-class("yellow";background-color);
+	.material-color-class("amber";background-color);
+	.material-color-class("orange";background-color);
+	.material-color-class("deep-orange";background-color);
+	.material-color-class("brown";background-color);
+	.material-color-class("grey";background-color);
+	.material-color-class("blue-grey";background-color);
+}

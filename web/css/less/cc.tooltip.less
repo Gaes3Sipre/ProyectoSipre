@@ -1,0 +1,101 @@
+//
+// Tooltips
+// --------------------------------------------------
+
+// Base class
+.tooltip {
+	position: absolute;
+	z-index: @zindex-tooltip;
+	display: block;
+	visibility: visible;
+	// Reset font and text properties given new insertion method
+	font-family: @font-family-base;
+	font-size: @tooltip-font-size;
+	font-weight: @tooltip-font-weight;
+	line-height: @tooltip-height;
+	overflow:hidden;
+	pointer-events: none;
+	.transition(none);
+
+	.border-radius(@tooltip-border-radius);
+	.opacity(0);
+
+	&.in     { 
+		.opacity(@tooltip-opacity);
+
+		.tooltip-inner{
+			.opacity(1);
+		}
+	}
+	&.top    { margin-top: -@tooltip-margin; padding: 0; }
+	&.right  { margin-left:	@tooltip-margin; padding: 0; }
+	&.bottom { margin-top: 	@tooltip-margin; padding: 0; }
+	&.left   { margin-left:-@tooltip-margin; padding: 0; }
+
+	.tooltip-wrapper{
+		position:relative;
+		width:100%;
+		height:100%;
+	}
+}
+
+.tooltip-background{
+	position:absolute;
+	border-radius:50%;
+	background-color: @tooltip-bg;
+	z-index:-1;
+	//transform-origin: 50% 50% 0px;
+	overflow:visible;
+	padding:0;
+
+	.opacity(0);
+	.scale(0);
+	.transition(all 0.4s @animation-type);
+
+	&.tooltip-show{
+		.opacity(1);
+		.scale(1);
+	}
+
+	.tooltip.top &{
+		.transform-origin(50% bottom 0px);
+	}
+	.tooltip.bottom &{
+		.transform-origin(50% top 0px);
+	}
+	.tooltip.right &{
+		.transform-origin(left 50% 0px);
+	}
+	.tooltip.left &{
+		.transform-origin(right 50% 0px);
+	}
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+	max-width: @tooltip-max-width;
+	padding: @tooltip-padding;
+	color: @tooltip-color;
+	text-align: center;
+	text-decoration: none;
+	background-color: transparent;
+	border-radius: @tooltip-border-radius;
+	z-index:1;
+
+	.opacity(0);
+	.transition(opacity 0.4s @animation-type 0.3s);
+}
+
+// Arrows
+.tooltip-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+	display:none;
+}
+// Note: Deprecated .top-left, .top-right, .bottom-left, and .bottom-right as of v3.3.1
+.tooltip {
+
+}
