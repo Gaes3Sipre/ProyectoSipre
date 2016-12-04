@@ -4,6 +4,9 @@
     Author     : alejozepol
 --%>
 
+<%@page import="edu.sipre.modoles.generales.GnUsuario"%>
+<%@page import="java.util.List"%>
+<%@page import="edu.sipre.modoles.generales.dao.UsuarioDAO_SQL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es">
@@ -37,6 +40,24 @@
         </script>-->
     </head>
     <body>
+         <table>
+    <tbody>
+        <%
+            UsuarioDAO_SQL uDao = new UsuarioDAO_SQL();
+            List<GnUsuario> usuarios = uDao.buscarTodos();
+            for (int i = 0; i < usuarios.size(); i++) {
+        %>
+        <tr>
+            <td><%= usuarios.get(i).getCodUsuario()%></td>
+            <td><%= usuarios.get(i).getCodTercero()%></td>
+            <td><%= usuarios.get(i).getClave()%></td>
+        </tr>
+         <%
+                            }
+                        %>
+    </tbody>
+     </table>
+    
         <div class="row">
             <div class="col-md-12" style="margin: 10px;" >
                 <div  id="authentication-box" class="col-md-4 col-sm-12">

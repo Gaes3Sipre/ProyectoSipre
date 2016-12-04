@@ -43,7 +43,12 @@ public class UsuarioDAO_SQL extends UsuarioDAO {
 
     @Override
     public List<GnUsuario> buscarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        EntityManager em = Persistence.createEntityManagerFactory("SiprePU").createEntityManager();
+//         GnUsuario usuario = null;
+        TypedQuery<GnUsuario> queryUSuario = em.createNamedQuery("GnUsuario.findAll", GnUsuario.class);
+        List<GnUsuario> resultado = queryUSuario.getResultList();
+        
+    return resultado;
     }
 
     @Override
