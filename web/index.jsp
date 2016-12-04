@@ -49,7 +49,6 @@
         %>
         <tr>
             <td><%= usuarios.get(i).getCodUsuario()%></td>
-            <td><%= usuarios.get(i).getCodTercero()%></td>
             <td><%= usuarios.get(i).getClave()%></td>
         </tr>
          <%

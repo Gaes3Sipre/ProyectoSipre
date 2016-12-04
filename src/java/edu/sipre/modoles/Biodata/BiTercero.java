@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.sipre.modoles;
+package edu.sipre.modoles.Biodata;
 
+import edu.sipre.modoles.Besolicitud;
+import edu.sipre.modoles.GnDocAdjunto;
+import edu.sipre.modoles.GnMunicipio;
+import edu.sipre.modoles.GnTipoIdentificacion;
 import edu.sipre.modoles.generales.GnUsuario;
 import java.io.Serializable;
 import java.util.Date;
