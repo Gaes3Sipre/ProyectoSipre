@@ -25,22 +25,15 @@
         <script src="js/jquery-1.12.2.min.js" type="text/javascript"></script>
         <script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <!--<script>
+        <!---<script>
             function validacion() {
                 var nomUsu = document.getElementById("inputNomUsu").value;
                 var clave = document.getElementById("inputPassword").value;
-                if (nomUsu !== "sipre" || clave !== "Asdf1234") {
+                if (nomUsu !== "" || clave !== "") {
                     $('#noValido').modal('show');
                     return false;
-                }
-                ;
-                if (nomUsu === "sipre" || clave === "Asdf1234") {
-                    location.href = "index.html";
-                    return fa
-        lse;
-                }
-            }
-            ;
+                };
+            };
         </script>-->
     </head>
     <body>

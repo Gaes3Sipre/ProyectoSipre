@@ -6,6 +6,8 @@
 package edu.sipre.controlador.generales;
 
 import edu.sipre.modoles.generales.GnUsuario;
+import edu.sipre.modoles.generales.dao.AbstractFacadeDAO;
+import edu.sipre.modoles.generales.dao.UsuarioDAO_SQL;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -37,12 +39,13 @@ public class Loguin extends HttpServlet {
             String usuario = request.getParameter("inputNomUsu");
             String clave = request.getParameter("inputPassword");
             String boton = request.getParameter("loguin");
-            
-           if(usuario != null && !usuario.equals("") && clave != null && !clave.equals("")){
-             GnUsuario u = new GnUsuario();
-                response.sendRedirect(request.getContextPath() + "/inicio.jsp");
+            UsuarioDAO_SQL uDAO_SQL = (UsuarioDAO_SQL) AbstractFacadeDAO.getFacadeDAO(1).getUsuarioDAO();
+            GnUsuario gu = uDAO_SQL.login(usuario, clave);
+            request.getRequestDispatcher("/inicio.jsp").forward(request, response);
 
-            }
+           /*if(usuario != null && !usuario.equals("") && clave != null && !clave.equals("")){
+             GnUsuario u = new GnUsuario();
+                response.sendRedirect(request.getContextPath() + "/inicio.jsp");*/            
         } catch (NumberFormatException exception) {
             System.out.println("hdjshasjdhjahdjkshajkd");
         } catch (Exception e) {
