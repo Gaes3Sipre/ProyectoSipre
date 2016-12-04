@@ -6,6 +6,9 @@
 package edu.sipre.modoles;
 
 import java.io.Serializable;
+import java.sql.SQLData;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -166,5 +169,6 @@ public class GnUsuario implements Serializable {
     public String toString() {
         return "edu.sipre.modoles.GnUsuario[ codUsuario=" + codUsuario + " ]";
     }
-    
+
 }
+

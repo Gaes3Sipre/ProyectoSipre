@@ -25,7 +25,7 @@
         <script src="js/jquery-1.12.2.min.js" type="text/javascript"></script>
         <script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script>
+        <!--<script>
             function validacion() {
                 var nomUsu = document.getElementById("inputNomUsu").value;
                 var clave = document.getElementById("inputPassword").value;
@@ -36,11 +36,12 @@
                 ;
                 if (nomUsu === "sipre" || clave === "Asdf1234") {
                     location.href = "index.html";
-                    return false;
+                    return fa
+        lse;
                 }
             }
             ;
-        </script>
+        </script>-->
     </head>
     <body>
         <div class="row">
@@ -60,18 +61,18 @@
                                 <form class="form" role="form" action="index.html" onsubmit="return  validacion()">
                                     <div class="form-group floating-label">
                                         <br>
-                                        <input type="text" class="form-control" id="inputNomUsu" required/>
+                                        <input type="text" class="form-control" id="inputNomUsu" name="inputNomUsu" required/>
                                         <label for="inputNomUsu">Usuario</label>
                                         <p id="m1" style="color: red"></p>
 
                                     </div>
                                     <div class="form-group floating-label">
                                         <br>
-                                        <input type="password" class="form-control" id="inputPassword" required/>
+                                        <input type="password" class="form-control" id="inputPassword" name="inputPassword"  required/>
                                         <label for="inputPassword">Contraseña</label>
                                         <p id="m2" style="color: red"></p>
                                     </div>
-                                    <button href="index.html" type="submit"  class="btn btn-info btn-raised btn-block">Ingresar</button>
+                                    <button href="inicio.html" type="submit"  class="btn btn-info btn-raised btn-block" name="loguin">Ingresar</button>
                                     <div class="authentication-body-footer margin-top-5">
                                         <div class="text-right">
                                             <a href="page-autenticación-olvido-contraseña.html">¿Recordar Contraseña?</a>
