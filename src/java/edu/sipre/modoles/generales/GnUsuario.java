@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.sipre.modoles;
+package edu.sipre.modoles.generales;
 
+import edu.sipre.modoles.BiTercero;
+import edu.sipre.modoles.GnDetalleRol;
 import java.io.Serializable;
 import java.sql.SQLData;
 import java.sql.SQLException;
@@ -39,7 +41,9 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "GnUsuario.findByClave", query = "SELECT g FROM GnUsuario g WHERE g.clave = :clave")
     , @NamedQuery(name = "GnUsuario.findByUsuActividad", query = "SELECT g FROM GnUsuario g WHERE g.usuActividad = :usuActividad")
     , @NamedQuery(name = "GnUsuario.findByTipActividad", query = "SELECT g FROM GnUsuario g WHERE g.tipActividad = :tipActividad")
-    , @NamedQuery(name = "GnUsuario.findByHorActividad", query = "SELECT g FROM GnUsuario g WHERE g.horActividad = :horActividad")})
+    , @NamedQuery(name = "GnUsuario.findByHorActividad", query = "SELECT g FROM GnUsuario g WHERE g.horActividad = :horActividad")
+    , @NamedQuery(name = "GnUsuario.loguin", query = "SELECT g FROM GnUsuario g WHERE g.codUsuario = :codUsuario and g.clave=:clave")})
+
 public class GnUsuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -171,4 +175,3 @@ public class GnUsuario implements Serializable {
     }
 
 }
-

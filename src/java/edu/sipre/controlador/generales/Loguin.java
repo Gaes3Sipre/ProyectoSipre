@@ -5,7 +5,7 @@
  */
 package edu.sipre.controlador.generales;
 
-import edu.sipre.modoles.GnUsuario;
+import edu.sipre.modoles.generales.GnUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
