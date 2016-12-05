@@ -6,7 +6,9 @@
 package edu.sipre.controlador.generales;
 
 import edu.sipre.modoles.generales.GnUsuario;
+import edu.sipre.modoles.generales.GnUsuario_;
 import edu.sipre.modoles.generales.dao.AbstractFacadeDAO;
+import edu.sipre.modoles.generales.dao.UsuarioDAO;
 import edu.sipre.modoles.generales.dao.UsuarioDAO_SQL;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,13 +38,23 @@ public class Loguin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession(false);
         try (PrintWriter out = response.getWriter()) {
+           
             String usuario = request.getParameter("inputNomUsu");
             String clave = request.getParameter("inputPassword");
             String boton = request.getParameter("loguin");
-            UsuarioDAO_SQL uDAO_SQL = (UsuarioDAO_SQL) AbstractFacadeDAO.getFacadeDAO(1).getUsuarioDAO();
-            GnUsuario gu = uDAO_SQL.login(usuario, clave);
-            request.getRequestDispatcher("/inicio.jsp").forward(request, response);
+            UsuarioDAO uDAO = AbstractFacadeDAO.getFacadeDAO(1).getUsuarioDAO();
+            GnUsuario gu = uDAO.login(usuario, clave);
+            if(usuario != null){
+            session.setAttribute("user", usuario);
+           response.sendRedirect(request.getContextPath() + "/inicio.jsp");
+            }else{
+//                    request.setAttribute("mensaje", "Documento y/o clave incorrectos");
+                    //response.sendRedirect(request.getContextPath() + "/index.html");
+                    request.getRequestDispatcher("/login.jsp").forward(request, response);
+                }
+//            request.getRequestDispatcher("/inicio.jsp").forward(request, response);
 
            /*if(usuario != null && !usuario.equals("") && clave != null && !clave.equals("")){
              GnUsuario u = new GnUsuario();
