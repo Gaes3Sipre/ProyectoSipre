@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.sipre.modoles;
+package edu.sipre.modoles.generales;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -63,8 +63,8 @@ public class GnPais implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codPais")
-    private List<GnDepartamento> gnDepartamentoList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codPais")
+//    private List<GnDepartamento> gnDepartamentoList;
 
     public GnPais() {
     }
@@ -119,14 +119,14 @@ public class GnPais implements Serializable {
     public void setHorActividad(Date horActividad) {
         this.horActividad = horActividad;
     }
-
-    public List<GnDepartamento> getGnDepartamentoList() {
-        return gnDepartamentoList;
-    }
-
-    public void setGnDepartamentoList(List<GnDepartamento> gnDepartamentoList) {
-        this.gnDepartamentoList = gnDepartamentoList;
-    }
+//
+//    public List<GnDepartamento> getGnDepartamentoList() {
+//        return gnDepartamentoList;
+//    }
+//
+//    public void setGnDepartamentoList(List<GnDepartamento> gnDepartamentoList) {
+//        this.gnDepartamentoList = gnDepartamentoList;
+//    }
 
     @Override
     public int hashCode() {

@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.sipre.modoles;
+package edu.sipre.modoles.generales;
 
+import edu.sipre.modoles.Biodata.BiBeneficiario;
+import edu.sipre.modoles.Biodata.BiEmpleados;
+import edu.sipre.modoles.Biodata.BiTercero;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -70,15 +73,15 @@ public class GnMunicipio implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "munNacimiento")
-    private List<BiBeneficiario> biBeneficiarioList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codMunicipio")
-    private List<BiTercero> biTerceroList;
-    @JoinColumn(name = "codDepartamento", referencedColumnName = "codDepartamento", nullable = false)
-    @ManyToOne(optional = false)
-    private GnDepartamento codDepartamento;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "munNacimiento")
-    private List<BiEmpleados> biEmpleadosList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "munNacimiento")
+//    private List<BiBeneficiario> biBeneficiarioList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codMunicipio")
+//    private List<BiTercero> biTerceroList;
+//    @JoinColumn(name = "codDepartamento", referencedColumnName = "codDepartamento", nullable = false)
+//    @ManyToOne(optional = false)
+//    private GnDepartamento codDepartamento;
+////    @OneToMany(cascade = CascadeType.ALL, mappedBy = "munNacimiento")
+//    private List<BiEmpleados> biEmpleadosList;
 
     public GnMunicipio() {
     }
@@ -143,37 +146,37 @@ public class GnMunicipio implements Serializable {
         this.horActividad = horActividad;
     }
 
-    public List<BiBeneficiario> getBiBeneficiarioList() {
-        return biBeneficiarioList;
-    }
-
-    public void setBiBeneficiarioList(List<BiBeneficiario> biBeneficiarioList) {
-        this.biBeneficiarioList = biBeneficiarioList;
-    }
-
-    public List<BiTercero> getBiTerceroList() {
-        return biTerceroList;
-    }
-
-    public void setBiTerceroList(List<BiTercero> biTerceroList) {
-        this.biTerceroList = biTerceroList;
-    }
-
-    public GnDepartamento getCodDepartamento() {
-        return codDepartamento;
-    }
-
-    public void setCodDepartamento(GnDepartamento codDepartamento) {
-        this.codDepartamento = codDepartamento;
-    }
-
-    public List<BiEmpleados> getBiEmpleadosList() {
-        return biEmpleadosList;
-    }
-
-    public void setBiEmpleadosList(List<BiEmpleados> biEmpleadosList) {
-        this.biEmpleadosList = biEmpleadosList;
-    }
+//    public List<BiBeneficiario> getBiBeneficiarioList() {
+//        return biBeneficiarioList;
+//    }
+//
+//    public void setBiBeneficiarioList(List<BiBeneficiario> biBeneficiarioList) {
+//        this.biBeneficiarioList = biBeneficiarioList;
+//    }
+//
+//    public List<BiTercero> getBiTerceroList() {
+//        return biTerceroList;
+//    }
+//
+//    public void setBiTerceroList(List<BiTercero> biTerceroList) {
+//        this.biTerceroList = biTerceroList;
+//    }
+//
+//    public GnDepartamento getCodDepartamento() {
+//        return codDepartamento;
+//    }
+//
+//    public void setCodDepartamento(GnDepartamento codDepartamento) {
+//        this.codDepartamento = codDepartamento;
+//    }
+//
+//    public List<BiEmpleados> getBiEmpleadosList() {
+//        return biEmpleadosList;
+//    }
+//
+//    public void setBiEmpleadosList(List<BiEmpleados> biEmpleadosList) {
+//        this.biEmpleadosList = biEmpleadosList;
+//    }
 
     @Override
     public int hashCode() {

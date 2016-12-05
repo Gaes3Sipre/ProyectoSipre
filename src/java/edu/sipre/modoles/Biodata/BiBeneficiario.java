@@ -5,8 +5,10 @@
  */
 package edu.sipre.modoles.Biodata;
 
-import edu.sipre.modoles.BeTipoServicio;
-import edu.sipre.modoles.GnMunicipio;
+
+import edu.sipre.modoles.beneficios.BeTipoServicio;
+import edu.sipre.modoles.Biodata.BiEmpleados;
+import edu.sipre.modoles.generales.GnMunicipio;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -75,12 +77,12 @@ public class BiBeneficiario implements Serializable {
     @JoinColumn(name = "tipBeneficiario", referencedColumnName = "codTipoServicio")
     @ManyToOne
     private BeTipoServicio tipBeneficiario;
-    @JoinColumn(name = "codEmpleado", referencedColumnName = "codEmpleado", nullable = false)
-    @OneToOne(optional = false)
-    private BiEmpleados codEmpleado;
-    @JoinColumn(name = "munNacimiento", referencedColumnName = "codMunicipio", nullable = false)
-    @ManyToOne(optional = false)
-    private GnMunicipio munNacimiento;
+//    @JoinColumn(name = "codEmpleado",  referencedColumnName = "codEmpleado", nullable = false)
+//    @OneToOne(optional = true)
+//    private BiEmpleados codEmpleado;
+//    @JoinColumn(name = "munNacimiento", referencedColumnName = "codMunicipio", nullable = false)
+//    @ManyToOne(optional = false)
+//    private GnMunicipio munNacimiento;
 
     public BiBeneficiario() {
     }
@@ -154,21 +156,21 @@ public class BiBeneficiario implements Serializable {
         this.tipBeneficiario = tipBeneficiario;
     }
 
-    public BiEmpleados getCodEmpleado() {
-        return codEmpleado;
-    }
+//    public BiEmpleados getCodEmpleado() {
+//        return codEmpleado;
+//    }
+//
+//    public void setCodEmpleado(BiEmpleados codEmpleado) {
+//        this.codEmpleado = codEmpleado;
+//    }
 
-    public void setCodEmpleado(BiEmpleados codEmpleado) {
-        this.codEmpleado = codEmpleado;
-    }
-
-    public GnMunicipio getMunNacimiento() {
-        return munNacimiento;
-    }
-
-    public void setMunNacimiento(GnMunicipio munNacimiento) {
-        this.munNacimiento = munNacimiento;
-    }
+//    public GnMunicipio getMunNacimiento() {
+//        return munNacimiento;
+//    }
+//
+//    public void setMunNacimiento(GnMunicipio munNacimiento) {
+//        this.munNacimiento = munNacimiento;
+//    }
 
     @Override
     public int hashCode() {

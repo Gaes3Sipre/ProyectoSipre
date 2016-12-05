@@ -5,8 +5,8 @@
  */
 package edu.sipre.modoles.Biodata;
 
-import edu.sipre.modoles.BeTipobeneficio;
-import edu.sipre.modoles.Besolicitud;
+import edu.sipre.modoles.beneficios.BeTipobeneficio;
+import edu.sipre.modoles.beneficios.Besolicitud;
 import edu.sipre.modoles.presepuesto.PeDetallePresupuesto;
 import java.io.Serializable;
 import java.util.Date;
@@ -79,12 +79,12 @@ public class BiProveedor implements Serializable {
     @Column(name = "actHora", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date actHora;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codProveedor")
-    private List<Besolicitud> besolicitudList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "biProveedor")
-    private List<BeTipobeneficio> beTipobeneficioList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codProveedor")
-    private List<PeDetallePresupuesto> peDetallePresupuestoList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codProveedor")
+//    private List<Besolicitud> besolicitudList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "biProveedor")
+//    private List<BeTipobeneficio> beTipobeneficioList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codProveedor")
+//    private List<PeDetallePresupuesto> peDetallePresupuestoList;
 
     public BiProveedor() {
     }
@@ -158,30 +158,30 @@ public class BiProveedor implements Serializable {
     public void setActHora(Date actHora) {
         this.actHora = actHora;
     }
-
-    public List<Besolicitud> getBesolicitudList() {
-        return besolicitudList;
-    }
-
-    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
-        this.besolicitudList = besolicitudList;
-    }
-
-    public List<BeTipobeneficio> getBeTipobeneficioList() {
-        return beTipobeneficioList;
-    }
-
-    public void setBeTipobeneficioList(List<BeTipobeneficio> beTipobeneficioList) {
-        this.beTipobeneficioList = beTipobeneficioList;
-    }
-
-    public List<PeDetallePresupuesto> getPeDetallePresupuestoList() {
-        return peDetallePresupuestoList;
-    }
-
-    public void setPeDetallePresupuestoList(List<PeDetallePresupuesto> peDetallePresupuestoList) {
-        this.peDetallePresupuestoList = peDetallePresupuestoList;
-    }
+//
+//    public List<Besolicitud> getBesolicitudList() {
+//        return besolicitudList;
+//    }
+//
+//    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
+//        this.besolicitudList = besolicitudList;
+//    }
+//
+//    public List<BeTipobeneficio> getBeTipobeneficioList() {
+//        return beTipobeneficioList;
+//    }
+//
+//    public void setBeTipobeneficioList(List<BeTipobeneficio> beTipobeneficioList) {
+//        this.beTipobeneficioList = beTipobeneficioList;
+//    }
+//
+//    public List<PeDetallePresupuesto> getPeDetallePresupuestoList() {
+//        return peDetallePresupuestoList;
+//    }
+//
+//    public void setPeDetallePresupuestoList(List<PeDetallePresupuesto> peDetallePresupuestoList) {
+//        this.peDetallePresupuestoList = peDetallePresupuestoList;
+//    }
 
     @Override
     public int hashCode() {

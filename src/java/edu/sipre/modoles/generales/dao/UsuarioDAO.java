@@ -16,5 +16,6 @@ import edu.sipre.modoles.generales.GnUsuario;
 public abstract class UsuarioDAO implements DAO<Integer, GnUsuario>{
     
     public abstract GnUsuario login(String usuario, String clave);
+   
     
 }

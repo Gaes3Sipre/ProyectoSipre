@@ -5,8 +5,9 @@
  */
 package edu.sipre.modoles.beneficios;
 
-import edu.sipre.modoles.BiProveedor;
-import edu.sipre.modoles.BiTercero;
+import edu.sipre.modoles.Biodata.BiProveedor;
+import edu.sipre.modoles.Biodata.BiTercero;
+import edu.sipre.modoles.beneficios.BeTipobeneficio;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -75,15 +76,15 @@ public class Besolicitud implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @JoinColumn(name = "codservicios", referencedColumnName = "codServicio", nullable = false)
-    @ManyToOne(optional = false)
-    private BeTipobeneficio codservicios;
-    @JoinColumn(name = "codProveedor", referencedColumnName = "codProveedor", nullable = false)
-    @ManyToOne(optional = false)
-    private BiProveedor codProveedor;
-    @JoinColumn(name = "codTomador", referencedColumnName = "codTercero", nullable = false)
-    @ManyToOne(optional = false)
-    private BiTercero codTomador;
+//    @JoinColumn(name = "codservicios", referencedColumnName = "codServicio", nullable = false)
+//    @ManyToOne(optional = false)
+//    private BeTipobeneficio codservicios;
+//    @JoinColumn(name = "codProveedor", referencedColumnName = "codProveedor", nullable = false)
+//    @ManyToOne(optional = false)
+//    private BiProveedor codProveedor;
+//    @JoinColumn(name = "codTomador", referencedColumnName = "codTercero", nullable = false)
+//    @ManyToOne(optional = false)
+//    private BiTercero codTomador;
 
     public Besolicitud() {
     }
@@ -157,30 +158,30 @@ public class Besolicitud implements Serializable {
     public void setHorActividad(Date horActividad) {
         this.horActividad = horActividad;
     }
-
-    public BeTipobeneficio getCodservicios() {
-        return codservicios;
-    }
-
-    public void setCodservicios(BeTipobeneficio codservicios) {
-        this.codservicios = codservicios;
-    }
-
-    public BiProveedor getCodProveedor() {
-        return codProveedor;
-    }
-
-    public void setCodProveedor(BiProveedor codProveedor) {
-        this.codProveedor = codProveedor;
-    }
-
-    public BiTercero getCodTomador() {
-        return codTomador;
-    }
-
-    public void setCodTomador(BiTercero codTomador) {
-        this.codTomador = codTomador;
-    }
+//
+//    public BeTipobeneficio getCodservicios() {
+//        return codservicios;
+//    }
+//
+//    public void setCodservicios(BeTipobeneficio codservicios) {
+//        this.codservicios = codservicios;
+//    }
+//
+//    public BiProveedor getCodProveedor() {
+//        return codProveedor;
+//    }
+//
+//    public void setCodProveedor(BiProveedor codProveedor) {
+//        this.codProveedor = codProveedor;
+//    }
+//
+//    public BiTercero getCodTomador() {
+//        return codTomador;
+//    }
+//
+//    public void setCodTomador(BiTercero codTomador) {
+//        this.codTomador = codTomador;
+//    }
 
     @Override
     public int hashCode() {

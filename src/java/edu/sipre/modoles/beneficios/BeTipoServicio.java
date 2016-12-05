@@ -5,7 +5,8 @@
  */
 package edu.sipre.modoles.beneficios;
 
-import edu.sipre.modoles.BiBeneficiario;
+
+import edu.sipre.modoles.Biodata.BiBeneficiario;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -83,10 +84,10 @@ public class BeTipoServicio implements Serializable {
     @Column(name = "actHora", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date actHora;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "beTipoServicio")
-    private List<BeTipobeneficio> beTipobeneficioList;
-    @OneToMany(mappedBy = "tipBeneficiario")
-    private List<BiBeneficiario> biBeneficiarioList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "beTipoServicio")
+//    private List<BeTipobeneficio> beTipobeneficioList;
+//    @OneToMany(mappedBy = "tipBeneficiario")
+//    private List<BiBeneficiario> biBeneficiarioList;
 
     public BeTipoServicio() {
     }
@@ -169,22 +170,22 @@ public class BeTipoServicio implements Serializable {
     public void setActHora(Date actHora) {
         this.actHora = actHora;
     }
-
-    public List<BeTipobeneficio> getBeTipobeneficioList() {
-        return beTipobeneficioList;
-    }
-
-    public void setBeTipobeneficioList(List<BeTipobeneficio> beTipobeneficioList) {
-        this.beTipobeneficioList = beTipobeneficioList;
-    }
-
-    public List<BiBeneficiario> getBiBeneficiarioList() {
-        return biBeneficiarioList;
-    }
-
-    public void setBiBeneficiarioList(List<BiBeneficiario> biBeneficiarioList) {
-        this.biBeneficiarioList = biBeneficiarioList;
-    }
+//
+//    public List<BeTipobeneficio> getBeTipobeneficioList() {
+//        return beTipobeneficioList;
+//    }
+//
+//    public void setBeTipobeneficioList(List<BeTipobeneficio> beTipobeneficioList) {
+//        this.beTipobeneficioList = beTipobeneficioList;
+//    }
+//
+//    public List<BiBeneficiario> getBiBeneficiarioList() {
+//        return biBeneficiarioList;
+//    }
+//
+//    public void setBiBeneficiarioList(List<BiBeneficiario> biBeneficiarioList) {
+//        this.biBeneficiarioList = biBeneficiarioList;
+//    }
 
     @Override
     public int hashCode() {

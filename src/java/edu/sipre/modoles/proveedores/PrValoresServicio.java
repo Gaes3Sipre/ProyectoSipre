@@ -5,7 +5,7 @@
  */
 package edu.sipre.modoles.proveedores;
 
-import edu.sipre.modoles.BeTipobeneficio;
+import edu.sipre.modoles.beneficios.BeTipobeneficio;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -74,9 +74,9 @@ public class PrValoresServicio implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @JoinColumn(name = "tipBeneficio", referencedColumnName = "codServicio", nullable = false)
-    @ManyToOne(optional = false)
-    private BeTipobeneficio tipBeneficio;
+//    @JoinColumn(name = "tipBeneficio", referencedColumnName = "codServicio", nullable = false)
+//    @ManyToOne(optional = false)
+//    private BeTipobeneficio tipBeneficio;
 
     public PrValoresServicio() {
     }
@@ -150,13 +150,13 @@ public class PrValoresServicio implements Serializable {
         this.horActividad = horActividad;
     }
 
-    public BeTipobeneficio getTipBeneficio() {
-        return tipBeneficio;
-    }
-
-    public void setTipBeneficio(BeTipobeneficio tipBeneficio) {
-        this.tipBeneficio = tipBeneficio;
-    }
+//    public BeTipobeneficio getTipBeneficio() {
+//        return tipBeneficio;
+//    }
+//
+//    public void setTipBeneficio(BeTipobeneficio tipBeneficio) {
+//        this.tipBeneficio = tipBeneficio;
+//    }
 
     @Override
     public int hashCode() {

@@ -5,8 +5,8 @@
  */
 package edu.sipre.modoles.beneficios;
 
-import edu.sipre.modoles.BiProveedor;
-import edu.sipre.modoles.PrValoresServicio;
+import edu.sipre.modoles.Biodata.BiProveedor;
+import edu.sipre.modoles.proveedores.PrValoresServicio;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -81,16 +81,16 @@ public class BeTipobeneficio implements Serializable {
     @Column(name = "actHora", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date actHora;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codservicios")
-    private List<Besolicitud> besolicitudList;
-    @JoinColumn(name = "codTipoServicio", referencedColumnName = "codTipoServicio", nullable = false, insertable = false, updatable = false)
-    @ManyToOne(optional = false)
-    private BeTipoServicio beTipoServicio;
-    @JoinColumn(name = "codProveedor", referencedColumnName = "codProveedor", nullable = false, insertable = false, updatable = false)
-    @ManyToOne(optional = false)
-    private BiProveedor biProveedor;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipBeneficio")
-    private List<PrValoresServicio> prValoresServicioList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codservicios")
+//    private List<Besolicitud> besolicitudList;
+//    @JoinColumn(name = "codTipoServicio", referencedColumnName = "codTipoServicio", nullable = false, insertable = false, updatable = false)
+//    @ManyToOne(optional = false)
+//    private BeTipoServicio beTipoServicio;
+//    @JoinColumn(name = "codProveedor", referencedColumnName = "codProveedor", nullable = false, insertable = false, updatable = false)
+//    @ManyToOne(optional = false)
+//    private BiProveedor biProveedor;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipBeneficio")
+//    private List<PrValoresServicio> prValoresServicioList;
 
     public BeTipobeneficio() {
     }
@@ -175,38 +175,38 @@ public class BeTipobeneficio implements Serializable {
     public void setActHora(Date actHora) {
         this.actHora = actHora;
     }
-
-    public List<Besolicitud> getBesolicitudList() {
-        return besolicitudList;
-    }
-
-    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
-        this.besolicitudList = besolicitudList;
-    }
-
-    public BeTipoServicio getBeTipoServicio() {
-        return beTipoServicio;
-    }
-
-    public void setBeTipoServicio(BeTipoServicio beTipoServicio) {
-        this.beTipoServicio = beTipoServicio;
-    }
-
-    public BiProveedor getBiProveedor() {
-        return biProveedor;
-    }
-
-    public void setBiProveedor(BiProveedor biProveedor) {
-        this.biProveedor = biProveedor;
-    }
-
-    public List<PrValoresServicio> getPrValoresServicioList() {
-        return prValoresServicioList;
-    }
-
-    public void setPrValoresServicioList(List<PrValoresServicio> prValoresServicioList) {
-        this.prValoresServicioList = prValoresServicioList;
-    }
+//
+//    public List<Besolicitud> getBesolicitudList() {
+//        return besolicitudList;
+//    }
+//
+//    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
+//        this.besolicitudList = besolicitudList;
+//    }
+//
+//    public BeTipoServicio getBeTipoServicio() {
+//        return beTipoServicio;
+//    }
+//
+//    public void setBeTipoServicio(BeTipoServicio beTipoServicio) {
+//        this.beTipoServicio = beTipoServicio;
+//    }
+//
+//    public BiProveedor getBiProveedor() {
+//        return biProveedor;
+//    }
+//
+//    public void setBiProveedor(BiProveedor biProveedor) {
+//        this.biProveedor = biProveedor;
+//    }
+//
+//    public List<PrValoresServicio> getPrValoresServicioList() {
+//        return prValoresServicioList;
+//    }
+//
+//    public void setPrValoresServicioList(List<PrValoresServicio> prValoresServicioList) {
+//        this.prValoresServicioList = prValoresServicioList;
+//    }
 
     @Override
     public int hashCode() {

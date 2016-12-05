@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.sipre.modoles;
+package edu.sipre.modoles.generales;
 
+import edu.sipre.modoles.generales.GnDetalleMenu;
+import edu.sipre.modoles.generales.GnDetalleRol;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -69,10 +71,10 @@ public class GnRol implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
-    private GnDetalleRol gnDetalleRol;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
-    private GnDetalleMenu gnDetalleMenu;
+//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
+//    private GnDetalleRol gnDetalleRol;
+//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
+//    private GnDetalleMenu gnDetalleMenu;
 
     public GnRol() {
     }
@@ -137,22 +139,22 @@ public class GnRol implements Serializable {
     public void setHorActividad(Date horActividad) {
         this.horActividad = horActividad;
     }
-
-    public GnDetalleRol getGnDetalleRol() {
-        return gnDetalleRol;
-    }
-
-    public void setGnDetalleRol(GnDetalleRol gnDetalleRol) {
-        this.gnDetalleRol = gnDetalleRol;
-    }
-
-    public GnDetalleMenu getGnDetalleMenu() {
-        return gnDetalleMenu;
-    }
-
-    public void setGnDetalleMenu(GnDetalleMenu gnDetalleMenu) {
-        this.gnDetalleMenu = gnDetalleMenu;
-    }
+//
+//    public GnDetalleRol getGnDetalleRol() {
+//        return gnDetalleRol;
+//    }
+//
+//    public void setGnDetalleRol(GnDetalleRol gnDetalleRol) {
+//        this.gnDetalleRol = gnDetalleRol;
+//    }
+//
+//    public GnDetalleMenu getGnDetalleMenu() {
+//        return gnDetalleMenu;
+//    }
+//
+//    public void setGnDetalleMenu(GnDetalleMenu gnDetalleMenu) {
+//        this.gnDetalleMenu = gnDetalleMenu;
+//    }
 
     @Override
     public int hashCode() {

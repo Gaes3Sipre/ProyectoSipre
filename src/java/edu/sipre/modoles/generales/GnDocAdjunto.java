@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.sipre.modoles;
+package edu.sipre.modoles.generales;
 
+import edu.sipre.modoles.Biodata.BiTercero;
+import edu.sipre.modoles.generales.GnTipoDocumento;
+import edu.sipre.modoles.generales.*;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;

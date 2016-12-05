@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.sipre.modoles;
+package edu.sipre.modoles.generales;
 
+import edu.sipre.modoles.Biodata.BiTercero;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
@@ -40,8 +41,8 @@ public class GnTipoIdentificacion implements Serializable {
     @Size(max = 20)
     @Column(name = "nomTipoIdentificacion", length = 20)
     private String nomTipoIdentificacion;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipIdentificacion")
-    private List<BiTercero> biTerceroList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipIdentificacion")
+//    private List<BiTercero> biTerceroList;
 
     public GnTipoIdentificacion() {
     }
@@ -66,13 +67,13 @@ public class GnTipoIdentificacion implements Serializable {
         this.nomTipoIdentificacion = nomTipoIdentificacion;
     }
 
-    public List<BiTercero> getBiTerceroList() {
-        return biTerceroList;
-    }
-
-    public void setBiTerceroList(List<BiTercero> biTerceroList) {
-        this.biTerceroList = biTerceroList;
-    }
+//    public List<BiTercero> getBiTerceroList() {
+//        return biTerceroList;
+//    }
+//
+//    public void setBiTerceroList(List<BiTercero> biTerceroList) {
+//        this.biTerceroList = biTerceroList;
+//    }
 
     @Override
     public int hashCode() {

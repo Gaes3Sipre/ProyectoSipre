@@ -5,10 +5,10 @@
  */
 package edu.sipre.modoles.Biodata;
 
-import edu.sipre.modoles.Besolicitud;
-import edu.sipre.modoles.GnDocAdjunto;
-import edu.sipre.modoles.GnMunicipio;
-import edu.sipre.modoles.GnTipoIdentificacion;
+import edu.sipre.modoles.generales.GnTipoIdentificacion;
+import edu.sipre.modoles.beneficios.Besolicitud;
+import edu.sipre.modoles.generales.GnDocAdjunto;
+import edu.sipre.modoles.generales.GnMunicipio;
 import edu.sipre.modoles.generales.GnUsuario;
 import java.io.Serializable;
 import java.util.Date;
@@ -116,20 +116,20 @@ public class BiTercero implements Serializable {
     @Column(name = "actHora", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date actHora;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTomador")
-    private List<Besolicitud> besolicitudList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTercero")
-    private List<GnUsuario> gnUsuarioList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "biTercero")
-    private List<GnDocAdjunto> gnDocAdjuntoList;
-    @JoinColumn(name = "codMunicipio", referencedColumnName = "codMunicipio", nullable = false)
-    @ManyToOne(optional = false)
-    private GnMunicipio codMunicipio;
-    @JoinColumn(name = "tipIdentificacion", referencedColumnName = "codTipoIdentificacion", nullable = false)
-    @ManyToOne(optional = false)
-    private GnTipoIdentificacion tipIdentificacion;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "biTercero")
-    private BiEmpleados biEmpleados;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTomador")
+//    private List<Besolicitud> besolicitudList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTercero")
+//    private List<GnUsuario> gnUsuarioList;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "biTercero")
+//    private List<GnDocAdjunto> gnDocAdjuntoList;
+//    @JoinColumn(name = "codMunicipio", referencedColumnName = "codMunicipio", nullable = false)
+//    @ManyToOne(optional = false)
+//    private GnMunicipio codMunicipio;
+//    @JoinColumn(name = "tipIdentificacion", referencedColumnName = "codTipoIdentificacion", nullable = false)
+//    @ManyToOne(optional = false)
+//    private GnTipoIdentificacion tipIdentificacion;
+//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "biTercero")
+//    private BiEmpleados biEmpleados;
 
     public BiTercero() {
     }
@@ -256,53 +256,53 @@ public class BiTercero implements Serializable {
         this.actHora = actHora;
     }
 
-    public List<Besolicitud> getBesolicitudList() {
-        return besolicitudList;
-    }
-
-    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
-        this.besolicitudList = besolicitudList;
-    }
-
-    public List<GnUsuario> getGnUsuarioList() {
-        return gnUsuarioList;
-    }
-
-    public void setGnUsuarioList(List<GnUsuario> gnUsuarioList) {
-        this.gnUsuarioList = gnUsuarioList;
-    }
-
-    public List<GnDocAdjunto> getGnDocAdjuntoList() {
-        return gnDocAdjuntoList;
-    }
-
-    public void setGnDocAdjuntoList(List<GnDocAdjunto> gnDocAdjuntoList) {
-        this.gnDocAdjuntoList = gnDocAdjuntoList;
-    }
-
-    public GnMunicipio getCodMunicipio() {
-        return codMunicipio;
-    }
-
-    public void setCodMunicipio(GnMunicipio codMunicipio) {
-        this.codMunicipio = codMunicipio;
-    }
-
-    public GnTipoIdentificacion getTipIdentificacion() {
-        return tipIdentificacion;
-    }
-
-    public void setTipIdentificacion(GnTipoIdentificacion tipIdentificacion) {
-        this.tipIdentificacion = tipIdentificacion;
-    }
-
-    public BiEmpleados getBiEmpleados() {
-        return biEmpleados;
-    }
-
-    public void setBiEmpleados(BiEmpleados biEmpleados) {
-        this.biEmpleados = biEmpleados;
-    }
+//    public List<Besolicitud> getBesolicitudList() {
+//        return besolicitudList;
+//    }
+//
+//    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
+//        this.besolicitudList = besolicitudList;
+//    }
+//
+//    public List<GnUsuario> getGnUsuarioList() {
+//        return gnUsuarioList;
+//    }
+//
+//    public void setGnUsuarioList(List<GnUsuario> gnUsuarioList) {
+//        this.gnUsuarioList = gnUsuarioList;
+//    }
+//
+//    public List<GnDocAdjunto> getGnDocAdjuntoList() {
+//        return gnDocAdjuntoList;
+//    }
+//
+//    public void setGnDocAdjuntoList(List<GnDocAdjunto> gnDocAdjuntoList) {
+//        this.gnDocAdjuntoList = gnDocAdjuntoList;
+//    }
+//
+//    public GnMunicipio getCodMunicipio() {
+//        return codMunicipio;
+//    }
+//
+//    public void setCodMunicipio(GnMunicipio codMunicipio) {
+//        this.codMunicipio = codMunicipio;
+//    }
+//
+//    public GnTipoIdentificacion getTipIdentificacion() {
+//        return tipIdentificacion;
+//    }
+//
+//    public void setTipIdentificacion(GnTipoIdentificacion tipIdentificacion) {
+//        this.tipIdentificacion = tipIdentificacion;
+//    }
+//
+//    public BiEmpleados getBiEmpleados() {
+//        return biEmpleados;
+//    }
+//
+//    public void setBiEmpleados(BiEmpleados biEmpleados) {
+//        this.biEmpleados = biEmpleados;
+//    }
 
     @Override
     public int hashCode() {

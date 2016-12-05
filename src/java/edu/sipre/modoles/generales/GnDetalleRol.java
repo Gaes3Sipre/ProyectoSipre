@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.sipre.modoles;
+package edu.sipre.modoles.generales;
 
-import edu.sipre.modoles.generales.GnUsuario;
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -59,12 +59,12 @@ public class GnDetalleRol implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @JoinColumn(name = "codRol", referencedColumnName = "codRol", nullable = false, insertable = false, updatable = false)
-    @OneToOne(optional = false)
-    private GnRol gnRol;
-    @JoinColumn(name = "codUsuario", referencedColumnName = "codUsuario", nullable = false)
-    @ManyToOne(optional = false)
-    private GnUsuario codUsuario;
+//    @JoinColumn(name = "codRol", referencedColumnName = "codRol", nullable = false, insertable = false, updatable = false)
+//    @OneToOne(optional = false)
+//    private GnRol gnRol;
+//    @JoinColumn(name = "codUsuario", referencedColumnName = "codUsuario", nullable = false)
+//    @ManyToOne(optional = false)
+//    private GnUsuario codUsuario;
 
     public GnDetalleRol() {
     }
@@ -111,22 +111,22 @@ public class GnDetalleRol implements Serializable {
     public void setHorActividad(Date horActividad) {
         this.horActividad = horActividad;
     }
-
-    public GnRol getGnRol() {
-        return gnRol;
-    }
-
-    public void setGnRol(GnRol gnRol) {
-        this.gnRol = gnRol;
-    }
-
-    public GnUsuario getCodUsuario() {
-        return codUsuario;
-    }
-
-    public void setCodUsuario(GnUsuario codUsuario) {
-        this.codUsuario = codUsuario;
-    }
+//
+//    public GnRol getGnRol() {
+//        return gnRol;
+//    }
+//
+//    public void setGnRol(GnRol gnRol) {
+//        this.gnRol = gnRol;
+//    }
+//
+//    public GnUsuario getCodUsuario() {
+//        return codUsuario;
+//    }
+//
+//    public void setCodUsuario(GnUsuario codUsuario) {
+//        this.codUsuario = codUsuario;
+//    }
 
     @Override
     public int hashCode() {

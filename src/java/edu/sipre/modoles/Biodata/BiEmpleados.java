@@ -5,7 +5,7 @@
  */
 package edu.sipre.modoles.Biodata;
 
-import edu.sipre.modoles.GnMunicipio;
+import edu.sipre.modoles.generales.GnMunicipio;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -88,14 +88,14 @@ public class BiEmpleados implements Serializable {
     @Column(name = "actHora", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date actHora;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "codEmpleado")
-    private BiBeneficiario biBeneficiario;
-    @JoinColumn(name = "codEmpleado", referencedColumnName = "codTercero", nullable = false, insertable = false, updatable = false)
-    @OneToOne(optional = false)
-    private BiTercero biTercero;
-    @JoinColumn(name = "munNacimiento", referencedColumnName = "codMunicipio", nullable = false)
-    @ManyToOne(optional = false)
-    private GnMunicipio munNacimiento;
+//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "codEmpleado")
+//    private BiBeneficiario biBeneficiario;
+//    @JoinColumn(name = "codEmpleado", referencedColumnName = "codTercero", nullable = false, insertable = false, updatable = false)
+//    @OneToOne(optional = false)
+//    private BiTercero biTercero;
+//    @JoinColumn(name = "munNacimiento", referencedColumnName = "codMunicipio", nullable = false)
+//    @ManyToOne(optional = false)
+//    private GnMunicipio munNacimiento;
 
     public BiEmpleados() {
     }
@@ -192,29 +192,29 @@ public class BiEmpleados implements Serializable {
         this.actHora = actHora;
     }
 
-    public BiBeneficiario getBiBeneficiario() {
-        return biBeneficiario;
-    }
-
-    public void setBiBeneficiario(BiBeneficiario biBeneficiario) {
-        this.biBeneficiario = biBeneficiario;
-    }
-
-    public BiTercero getBiTercero() {
-        return biTercero;
-    }
-
-    public void setBiTercero(BiTercero biTercero) {
-        this.biTercero = biTercero;
-    }
-
-    public GnMunicipio getMunNacimiento() {
-        return munNacimiento;
-    }
-
-    public void setMunNacimiento(GnMunicipio munNacimiento) {
-        this.munNacimiento = munNacimiento;
-    }
+//    public BiBeneficiario getBiBeneficiario() {
+//        return biBeneficiario;
+//    }
+//
+//    public void setBiBeneficiario(BiBeneficiario biBeneficiario) {
+//        this.biBeneficiario = biBeneficiario;
+//    }
+//
+//    public BiTercero getBiTercero() {
+//        return biTercero;
+//    }
+//
+//    public void setBiTercero(BiTercero biTercero) {
+//        this.biTercero = biTercero;
+//    }
+//
+//    public GnMunicipio getMunNacimiento() {
+//        return munNacimiento;
+//    }
+//
+//    public void setMunNacimiento(GnMunicipio munNacimiento) {
+//        this.munNacimiento = munNacimiento;
+//    }
 
     @Override
     public int hashCode() {

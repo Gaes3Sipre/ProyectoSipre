@@ -5,8 +5,7 @@
  */
 package edu.sipre.modoles.generales;
 
-import edu.sipre.modoles.BiTercero;
-import edu.sipre.modoles.GnDetalleRol;
+import edu.sipre.modoles.Biodata.BiTercero;
 import java.io.Serializable;
 import java.sql.SQLData;
 import java.sql.SQLException;
@@ -72,11 +71,11 @@ public class GnUsuario implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codUsuario")
-    private List<GnDetalleRol> gnDetalleRolList;
-    @JoinColumn(name = "codTercero", referencedColumnName = "codTercero", nullable = false)
-    @ManyToOne(optional = false)
-    private BiTercero codTercero;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codUsuario")
+//    private List<GnDetalleRol> gnDetalleRolList;
+//    @JoinColumn(name = "codTercero", referencedColumnName = "codTercero", nullable = false)
+//    @ManyToOne(optional = false)
+//    private BiTercero codTercero;
 
     public GnUsuario() {
     }
@@ -133,21 +132,21 @@ public class GnUsuario implements Serializable {
         this.horActividad = horActividad;
     }
 
-    public List<GnDetalleRol> getGnDetalleRolList() {
-        return gnDetalleRolList;
-    }
-
-    public void setGnDetalleRolList(List<GnDetalleRol> gnDetalleRolList) {
-        this.gnDetalleRolList = gnDetalleRolList;
-    }
-
-    public BiTercero getCodTercero() {
-        return codTercero;
-    }
-
-    public void setCodTercero(BiTercero codTercero) {
-        this.codTercero = codTercero;
-    }
+//    public List<GnDetalleRol> getGnDetalleRolList() {
+//        return gnDetalleRolList;
+//    }
+//
+//    public void setGnDetalleRolList(List<GnDetalleRol> gnDetalleRolList) {
+//        this.gnDetalleRolList = gnDetalleRolList;
+//    }
+//
+//    public BiTercero getCodTercero() {
+//        return codTercero;
+//    }
+//
+//    public void setCodTercero(BiTercero codTercero) {
+//        this.codTercero = codTercero;
+//    }
 
     @Override
     public int hashCode() {

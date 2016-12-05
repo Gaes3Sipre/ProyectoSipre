@@ -40,17 +40,7 @@ public class UsuarioDAO_SQL extends UsuarioDAO {
     public GnUsuario buscarPorPK(Integer pk) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public List<GnUsuario> buscarTodos() {
-        EntityManager em = Persistence.createEntityManagerFactory("SiprePU").createEntityManager();
-//         GnUsuario usuario = null;
-        TypedQuery<GnUsuario> queryUSuario = em.createNamedQuery("GnUsuario.findAll", GnUsuario.class);
-        List<GnUsuario> resultado = queryUSuario.getResultList();
-        
-    return resultado;
-    }
-
+    
     @Override
     public int contar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -69,6 +59,16 @@ public class UsuarioDAO_SQL extends UsuarioDAO {
     @Override
     public boolean eliminar(Integer pk) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<GnUsuario> buscarTodos() {
+        EntityManager em = Persistence.createEntityManagerFactory("SiprePU").createEntityManager();
+//         GnUsuario usuario = null;
+        TypedQuery<GnUsuario> queryUSuario = em.createNamedQuery("GnUsuario.findAll", GnUsuario.class);
+        List<GnUsuario> resultado = queryUSuario.getResultList();
+        
+    return resultado;
     }
 
 
