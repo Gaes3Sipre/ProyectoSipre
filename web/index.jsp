@@ -71,7 +71,7 @@
                                 <span>Inicio de Sección</span>
                             </div>
                             <div class="authentication-body">
-                                <form class="form" role="form" action="index.html" onsubmit="return  validacion()">
+                                <form class="form" role="form" onsubmit="return  validacion()">
                                     <div class="form-group floating-label">
                                         <br>
                                         <input type="text" class="form-control" id="inputNomUsu" name="inputNomUsu" required/>
@@ -85,7 +85,8 @@
                                         <label for="inputPassword">Contraseña</label>
                                         <p id="m2" style="color: red"></p>
                                     </div>
-                                    <button href="inicio.html" type="submit"  class="btn btn-info btn-raised btn-block" name="loguin">Ingresar</button>
+                                    <!--<button href="inicio.html" type="submit"  class="btn btn-info btn-raised btn-block" name="loguin">Ingresar</button>-->
+                                    <input type="submit"  class="btn btn-info btn-raised btn-block" name="loguin" value="Inicio"/>
                                     <div class="authentication-body-footer margin-top-5">
                                         <div class="text-right">
                                             <a href="page-autenticación-olvido-contraseña.html">¿Recordar Contraseña?</a>

@@ -6,10 +6,8 @@
 package edu.sipre.controlador.generales;
 
 import edu.sipre.modoles.generales.GnUsuario;
-import edu.sipre.modoles.generales.GnUsuario_;
 import edu.sipre.modoles.generales.dao.AbstractFacadeDAO;
 import edu.sipre.modoles.generales.dao.UsuarioDAO;
-import edu.sipre.modoles.generales.dao.UsuarioDAO_SQL;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

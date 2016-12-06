@@ -24,12 +24,11 @@ public class UsuarioDAO_SQL extends UsuarioDAO {
     @Override
     public GnUsuario login(String usuario, String clave) {
         EntityManager em = Persistence.createEntityManagerFactory("SiprePU").createEntityManager();
-//         GnUsuario usuario = null;
         TypedQuery<GnUsuario> queryUSuario = em.createNamedQuery("GnUsuario.loguin", GnUsuario.class);
         queryUSuario.setParameter("codUsuario", usuario);
         queryUSuario.setParameter("clave", clave);
         List<GnUsuario> resultado = queryUSuario.getResultList();
-        if (resultado.size() == 1) {
+        if (resultado.size() == 1) {      
             return resultado.get(0);
         }
         return null;
@@ -37,10 +36,19 @@ public class UsuarioDAO_SQL extends UsuarioDAO {
     }
 
     @Override
+    public List<GnUsuario> buscarTodos() {
+        EntityManager em = Persistence.createEntityManagerFactory("SiprePU").createEntityManager();
+        TypedQuery<GnUsuario> queryUSuario = em.createNamedQuery("GnUsuario.findAll", GnUsuario.class);
+        List<GnUsuario> resultado = queryUSuario.getResultList();
+
+        return resultado;
+    }
+
+    @Override
     public GnUsuario buscarPorPK(Integer pk) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
     public int contar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -60,16 +68,5 @@ public class UsuarioDAO_SQL extends UsuarioDAO {
     public boolean eliminar(Integer pk) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public List<GnUsuario> buscarTodos() {
-        EntityManager em = Persistence.createEntityManagerFactory("SiprePU").createEntityManager();
-//         GnUsuario usuario = null;
-        TypedQuery<GnUsuario> queryUSuario = em.createNamedQuery("GnUsuario.findAll", GnUsuario.class);
-        List<GnUsuario> resultado = queryUSuario.getResultList();
-        
-    return resultado;
-    }
-
 
 }
