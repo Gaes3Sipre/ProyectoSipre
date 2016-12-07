@@ -40,22 +40,6 @@
         </script>-->
     </head>
     <body>
-         <table>
-    <tbody>
-        <%
-            UsuarioDAO_SQL uDao = new UsuarioDAO_SQL();
-            List<GnUsuario> usuarios = uDao.buscarTodos();
-            for (int i = 0; i < usuarios.size(); i++) {
-        %>
-        <tr>
-            <td><%= usuarios.get(i).getCodUsuario()%></td>
-            <td><%= usuarios.get(i).getClave()%></td>
-        </tr>
-         <%
-                            }
-                        %>
-    </tbody>
-     </table>
     
         <div class="row">
             <div class="col-md-12" style="margin: 10px;" >
@@ -71,7 +55,7 @@
                                 <span>Inicio de Sección</span>
                             </div>
                             <div class="authentication-body">
-                                <form class="form" role="form" onsubmit="return  validacion()">
+                                <form class="form" role="form" onsubmit="return  validacion()" method="POST" action="index">
                                     <div class="form-group floating-label">
                                         <br>
                                         <input type="text" class="form-control" id="inputNomUsu" name="inputNomUsu" required/>

@@ -35,13 +35,13 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "Gn_Usuarios")
 @NamedQueries({
-    @NamedQuery(name = "GnUsuario.findAll", query = "SELECT g FROM GnUsuario g")
-    , @NamedQuery(name = "GnUsuario.findByCodUsuario", query = "SELECT g FROM GnUsuario g WHERE g.codUsuario = :codUsuario")
-    , @NamedQuery(name = "GnUsuario.findByClave", query = "SELECT g FROM GnUsuario g WHERE g.clave = :clave")
-    , @NamedQuery(name = "GnUsuario.findByUsuActividad", query = "SELECT g FROM GnUsuario g WHERE g.usuActividad = :usuActividad")
-    , @NamedQuery(name = "GnUsuario.findByTipActividad", query = "SELECT g FROM GnUsuario g WHERE g.tipActividad = :tipActividad")
-    , @NamedQuery(name = "GnUsuario.findByHorActividad", query = "SELECT g FROM GnUsuario g WHERE g.horActividad = :horActividad")
-    , @NamedQuery(name = "GnUsuario.loguin", query = "SELECT g FROM GnUsuario g WHERE g.codUsuario = :codUsuario and g.clave=:clave")})
+    @NamedQuery(name = "GnUsuario.findAll", query = "SELECT g FROM GnUsuario g"),
+    @NamedQuery(name = "GnUsuario.findByCodUsuario", query = "SELECT g FROM GnUsuario g WHERE g.codUsuario = :codUsuario"),
+    @NamedQuery(name = "GnUsuario.findByClave", query = "SELECT g FROM GnUsuario g WHERE g.clave = :clave"),
+    @NamedQuery(name = "GnUsuario.findByUsuActividad", query = "SELECT g FROM GnUsuario g WHERE g.usuActividad = :usuActividad"),
+    @NamedQuery(name = "GnUsuario.findByTipActividad", query = "SELECT g FROM GnUsuario g WHERE g.tipActividad = :tipActividad"),
+    @NamedQuery(name = "GnUsuario.findByHorActividad", query = "SELECT g FROM GnUsuario g WHERE g.horActividad = :horActividad"),
+    @NamedQuery(name = "GnUsuario.loguin", query = "SELECT g FROM GnUsuario g WHERE g.codUsuario = :codUsuario and g.clave=:clave")})
 
 public class GnUsuario implements Serializable {
 
@@ -73,9 +73,9 @@ public class GnUsuario implements Serializable {
     private Date horActividad;
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codUsuario")
 //    private List<GnDetalleRol> gnDetalleRolList;
-//    @JoinColumn(name = "codTercero", referencedColumnName = "codTercero", nullable = false)
-//    @ManyToOne(optional = false)
-//    private BiTercero codTercero;
+    @JoinColumn(name = "codTercero", referencedColumnName = "codTercero", nullable = false)
+    @ManyToOne(optional = false)
+    private BiTercero codTercero;
 
     public GnUsuario() {
     }
@@ -140,13 +140,13 @@ public class GnUsuario implements Serializable {
 //        this.gnDetalleRolList = gnDetalleRolList;
 //    }
 //
-//    public BiTercero getCodTercero() {
-//        return codTercero;
-//    }
-//
-//    public void setCodTercero(BiTercero codTercero) {
-//        this.codTercero = codTercero;
-//    }
+    public BiTercero getCodTercero() {
+        return codTercero;
+    }
+
+    public void setCodTercero(BiTercero codTercero) {
+        this.codTercero = codTercero;
+    }
 
     @Override
     public int hashCode() {

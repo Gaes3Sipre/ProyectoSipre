@@ -118,13 +118,13 @@ public class BiTercero implements Serializable {
     private Date actHora;
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTomador")
 //    private List<Besolicitud> besolicitudList;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTercero")
-//    private List<GnUsuario> gnUsuarioList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTercero")
+    private List<GnUsuario> gnUsuarioList;
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "biTercero")
 //    private List<GnDocAdjunto> gnDocAdjuntoList;
-//    @JoinColumn(name = "codMunicipio", referencedColumnName = "codMunicipio", nullable = false)
-//    @ManyToOne(optional = false)
-//    private GnMunicipio codMunicipio;
+    @JoinColumn(name = "codMunicipio", referencedColumnName = "codMunicipio", nullable = false)
+    @ManyToOne(optional = false)
+    private GnMunicipio codMunicipio;
 //    @JoinColumn(name = "tipIdentificacion", referencedColumnName = "codTipoIdentificacion", nullable = false)
 //    @ManyToOne(optional = false)
 //    private GnTipoIdentificacion tipIdentificacion;
@@ -263,14 +263,14 @@ public class BiTercero implements Serializable {
 //    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
 //        this.besolicitudList = besolicitudList;
 //    }
-//
-//    public List<GnUsuario> getGnUsuarioList() {
-//        return gnUsuarioList;
-//    }
-//
-//    public void setGnUsuarioList(List<GnUsuario> gnUsuarioList) {
-//        this.gnUsuarioList = gnUsuarioList;
-//    }
+
+    public List<GnUsuario> getGnUsuarioList() {
+        return gnUsuarioList;
+    }
+
+    public void setGnUsuarioList(List<GnUsuario> gnUsuarioList) {
+        this.gnUsuarioList = gnUsuarioList;
+    }
 //
 //    public List<GnDocAdjunto> getGnDocAdjuntoList() {
 //        return gnDocAdjuntoList;
@@ -279,15 +279,15 @@ public class BiTercero implements Serializable {
 //    public void setGnDocAdjuntoList(List<GnDocAdjunto> gnDocAdjuntoList) {
 //        this.gnDocAdjuntoList = gnDocAdjuntoList;
 //    }
-//
-//    public GnMunicipio getCodMunicipio() {
-//        return codMunicipio;
-//    }
-//
-//    public void setCodMunicipio(GnMunicipio codMunicipio) {
-//        this.codMunicipio = codMunicipio;
-//    }
-//
+
+    public GnMunicipio getCodMunicipio() {
+        return codMunicipio;
+    }
+
+    public void setCodMunicipio(GnMunicipio codMunicipio) {
+        this.codMunicipio = codMunicipio;
+    }
+
 //    public GnTipoIdentificacion getTipIdentificacion() {
 //        return tipIdentificacion;
 //    }
