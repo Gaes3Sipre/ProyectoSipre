@@ -38,26 +38,23 @@ public class Loguin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(false);
         try (PrintWriter out = response.getWriter()) {
-           
+
             String usuario = request.getParameter("inputNomUsu");
             String clave = request.getParameter("inputPassword");
             String boton = request.getParameter("loguin");
             UsuarioDAO uDAO = AbstractFacadeDAO.getFacadeDAO(1).getUsuarioDAO();
             GnUsuario gu = uDAO.login(usuario, clave);
-            if(usuario != null){
-            session.setAttribute("user", usuario);
-           response.sendRedirect(request.getContextPath() + "/inicio.jsp");
-            }else{
-//                    request.setAttribute("mensaje", "Documento y/o clave incorrectos");
-                    //response.sendRedirect(request.getContextPath() + "/index.html");
-                    request.getRequestDispatcher("/login.jsp").forward(request, response);
-                }
-//            request.getRequestDispatcher("/inicio.jsp").forward(request, response);
+            if (gu != null) {
+                session.setAttribute("user", usuario);
+                response.sendRedirect(request.getContextPath() + "/app/inicio.jsp");
+            } else {
 
-           /*if(usuario != null && !usuario.equals("") && clave != null && !clave.equals("")){
-             GnUsuario u = new GnUsuario();
-                response.sendRedirect(request.getContextPath() + "/inicio.jsp");*/            
-        } catch (NumberFormatException exception) {
+                response.setContentType("text/html");
+                out.println("<script language='JavaScript'>");
+                out.print(" function validacion()");
+                out.println("</script>");
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }} catch (NumberFormatException exception) {
             System.out.println("hdjshasjdhjahdjkshajkd");
         } catch (Exception e) {
             e.printStackTrace();

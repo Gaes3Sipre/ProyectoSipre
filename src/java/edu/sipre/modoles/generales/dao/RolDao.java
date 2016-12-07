@@ -5,17 +5,10 @@
  */
 package edu.sipre.modoles.generales.dao;
 
-import edu.sipre.modoles.generales.GnUsuario;
-
-
-
 /**
  *
- * @author SIPRE
+ * @author alejozepol
  */
-public abstract class UsuarioDAO implements DAO<Integer, GnUsuario>{
-    
-    public abstract GnUsuario login(String usuario, String clave);
-   
+public interface RolDao {
     
 }

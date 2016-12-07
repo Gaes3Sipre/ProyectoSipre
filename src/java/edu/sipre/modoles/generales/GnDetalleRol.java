@@ -36,6 +36,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "GnDetalleRol.findByCodRol", query = "SELECT g FROM GnDetalleRol g WHERE g.codRol = :codRol")
     , @NamedQuery(name = "GnDetalleRol.findByUsuActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.usuActividad = :usuActividad")
     , @NamedQuery(name = "GnDetalleRol.findByTipActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.tipActividad = :tipActividad")
+    , @NamedQuery(name = "GnDetalleRol.RolesUsuario", query = "SELECT g FROM GnDetalleRol g WHERE g.codUsuario = :codUsuario")
     , @NamedQuery(name = "GnDetalleRol.findByHorActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.horActividad = :horActividad")})
 public class GnDetalleRol implements Serializable {
 
@@ -43,8 +44,8 @@ public class GnDetalleRol implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "codRol", nullable = false)
-    private Integer codRol;
+    @Column(name = "codDetalleRol", nullable = false)
+    private Integer codDetalleRol;
     @Basic(optional = false)
     @NotNull
     @Column(name = "usuActividad", nullable = false)
@@ -65,26 +66,37 @@ public class GnDetalleRol implements Serializable {
     @JoinColumn(name = "codUsuario", referencedColumnName = "codUsuario", nullable = false)
     @ManyToOne(optional = false)
     private GnUsuario codUsuario;
+    @JoinColumn(name = "codRol", referencedColumnName = "codRol", nullable = false)
+    @ManyToOne(optional = false)
+    private GnRol codRol;
 
     public GnDetalleRol() {
     }
 
-    public GnDetalleRol(Integer codRol) {
-        this.codRol = codRol;
+    public GnDetalleRol(Integer codDetalleRol) {
+        this.codDetalleRol = codDetalleRol;
     }
 
-    public GnDetalleRol(Integer codRol, int usuActividad, String tipActividad, Date horActividad) {
-        this.codRol = codRol;
+    public GnDetalleRol(Integer codDetalleRol, int usuActividad, String tipActividad, Date horActividad) {
+        this.codDetalleRol = codDetalleRol;
         this.usuActividad = usuActividad;
         this.tipActividad = tipActividad;
         this.horActividad = horActividad;
     }
 
-    public Integer getCodRol() {
+    public Integer getCodDetalleRol() {
+        return codDetalleRol;
+    }
+
+    public void setCodDetalleRol(Integer codDetalleRol) {
+        this.codDetalleRol = codDetalleRol;
+    }
+    
+    public GnRol getCodRol() {
         return codRol;
     }
 
-    public void setCodRol(Integer codRol) {
+    public void setCodRol(GnRol codRol) {
         this.codRol = codRol;
     }
 
