@@ -59,9 +59,9 @@ public class GnDetalleRol implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-//    @JoinColumn(name = "codRol", referencedColumnName = "codRol", nullable = false, insertable = false, updatable = false)
-//    @OneToOne(optional = false)
-//    private GnRol gnRol;
+    @JoinColumn(name = "codRol", referencedColumnName = "codRol", nullable = false, insertable = false, updatable = false)
+    @OneToOne(optional = false)
+    private GnRol gnRol;
 //    @JoinColumn(name = "codUsuario", referencedColumnName = "codUsuario", nullable = false)
 //    @ManyToOne(optional = false)
 //    private GnUsuario codUsuario;
@@ -111,14 +111,14 @@ public class GnDetalleRol implements Serializable {
     public void setHorActividad(Date horActividad) {
         this.horActividad = horActividad;
     }
-//
-//    public GnRol getGnRol() {
-//        return gnRol;
-//    }
-//
-//    public void setGnRol(GnRol gnRol) {
-//        this.gnRol = gnRol;
-//    }
+
+    public GnRol getGnRol() {
+        return gnRol;
+    }
+
+    public void setGnRol(GnRol gnRol) {
+        this.gnRol = gnRol;
+    }
 //
 //    public GnUsuario getCodUsuario() {
 //        return codUsuario;

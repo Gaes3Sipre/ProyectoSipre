@@ -65,11 +65,11 @@ public class GnDepartamento implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-//    @JoinColumn(name = "codPais", referencedColumnName = "codPais", nullable = false)
-//    @ManyToOne(optional = false)
-//    private GnPais codPais;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codDepartamento")
-//    private List<GnMunicipio> gnMunicipioList;
+    @JoinColumn(name = "codPais", referencedColumnName = "codPais", nullable = false)
+    @ManyToOne(optional = false)
+    private GnPais codPais;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codDepartamento")
+    private List<GnMunicipio> gnMunicipioList;
 
     public GnDepartamento() {
     }
@@ -124,22 +124,22 @@ public class GnDepartamento implements Serializable {
     public void setHorActividad(Date horActividad) {
         this.horActividad = horActividad;
     }
-//
-//    public GnPais getCodPais() {
-//        return codPais;
-//    }
-//
-//    public void setCodPais(GnPais codPais) {
-//        this.codPais = codPais;
-//    }
-//
-//    public List<GnMunicipio> getGnMunicipioList() {
-//        return gnMunicipioList;
-//    }
-//
-//    public void setGnMunicipioList(List<GnMunicipio> gnMunicipioList) {
-//        this.gnMunicipioList = gnMunicipioList;
-//    }
+
+    public GnPais getCodPais() {
+        return codPais;
+    }
+
+    public void setCodPais(GnPais codPais) {
+        this.codPais = codPais;
+    }
+
+    public List<GnMunicipio> getGnMunicipioList() {
+        return gnMunicipioList;
+    }
+
+    public void setGnMunicipioList(List<GnMunicipio> gnMunicipioList) {
+        this.gnMunicipioList = gnMunicipioList;
+    }
 
     @Override
     public int hashCode() {

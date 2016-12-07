@@ -116,8 +116,8 @@ public class BiTercero implements Serializable {
     @Column(name = "actHora", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date actHora;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTomador")
-//    private List<Besolicitud> besolicitudList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTomador")
+    private List<Besolicitud> besolicitudList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "codTercero")
     private List<GnUsuario> gnUsuarioList;
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "biTercero")
@@ -125,11 +125,11 @@ public class BiTercero implements Serializable {
     @JoinColumn(name = "codMunicipio", referencedColumnName = "codMunicipio", nullable = false)
     @ManyToOne(optional = false)
     private GnMunicipio codMunicipio;
-//    @JoinColumn(name = "tipIdentificacion", referencedColumnName = "codTipoIdentificacion", nullable = false)
-//    @ManyToOne(optional = false)
-//    private GnTipoIdentificacion tipIdentificacion;
-//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "biTercero")
-//    private BiEmpleados biEmpleados;
+    @JoinColumn(name = "tipIdentificacion", referencedColumnName = "codTipoIdentificacion", nullable = false)
+    @ManyToOne(optional = false)
+    private GnTipoIdentificacion tipIdentificacion;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "biTercero")
+    private BiEmpleados biEmpleados;
 
     public BiTercero() {
     }
@@ -256,13 +256,13 @@ public class BiTercero implements Serializable {
         this.actHora = actHora;
     }
 
-//    public List<Besolicitud> getBesolicitudList() {
-//        return besolicitudList;
-//    }
-//
-//    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
-//        this.besolicitudList = besolicitudList;
-//    }
+    public List<Besolicitud> getBesolicitudList() {
+        return besolicitudList;
+    }
+
+    public void setBesolicitudList(List<Besolicitud> besolicitudList) {
+        this.besolicitudList = besolicitudList;
+    }
 
     public List<GnUsuario> getGnUsuarioList() {
         return gnUsuarioList;
@@ -288,21 +288,21 @@ public class BiTercero implements Serializable {
         this.codMunicipio = codMunicipio;
     }
 
-//    public GnTipoIdentificacion getTipIdentificacion() {
-//        return tipIdentificacion;
-//    }
-//
-//    public void setTipIdentificacion(GnTipoIdentificacion tipIdentificacion) {
-//        this.tipIdentificacion = tipIdentificacion;
-//    }
-//
-//    public BiEmpleados getBiEmpleados() {
-//        return biEmpleados;
-//    }
-//
-//    public void setBiEmpleados(BiEmpleados biEmpleados) {
-//        this.biEmpleados = biEmpleados;
-//    }
+    public GnTipoIdentificacion getTipIdentificacion() {
+        return tipIdentificacion;
+    }
+
+    public void setTipIdentificacion(GnTipoIdentificacion tipIdentificacion) {
+        this.tipIdentificacion = tipIdentificacion;
+    }
+
+    public BiEmpleados getBiEmpleados() {
+        return biEmpleados;
+    }
+
+    public void setBiEmpleados(BiEmpleados biEmpleados) {
+        this.biEmpleados = biEmpleados;
+    }
 
     @Override
     public int hashCode() {

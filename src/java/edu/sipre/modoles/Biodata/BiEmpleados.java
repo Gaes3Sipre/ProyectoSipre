@@ -90,12 +90,12 @@ public class BiEmpleados implements Serializable {
     private Date actHora;
 //    @OneToOne(cascade = CascadeType.ALL, mappedBy = "codEmpleado")
 //    private BiBeneficiario biBeneficiario;
-//    @JoinColumn(name = "codEmpleado", referencedColumnName = "codTercero", nullable = false, insertable = false, updatable = false)
-//    @OneToOne(optional = false)
-//    private BiTercero biTercero;
-//    @JoinColumn(name = "munNacimiento", referencedColumnName = "codMunicipio", nullable = false)
-//    @ManyToOne(optional = false)
-//    private GnMunicipio munNacimiento;
+    @JoinColumn(name = "codEmpleado", referencedColumnName = "codTercero", nullable = false, insertable = false, updatable = false)
+    @OneToOne(optional = false)
+    private BiTercero biTercero;
+    @JoinColumn(name = "munNacimiento", referencedColumnName = "codMunicipio", nullable = false)
+    @ManyToOne(optional = false)
+    private GnMunicipio munNacimiento;
 
     public BiEmpleados() {
     }
@@ -199,22 +199,22 @@ public class BiEmpleados implements Serializable {
 //    public void setBiBeneficiario(BiBeneficiario biBeneficiario) {
 //        this.biBeneficiario = biBeneficiario;
 //    }
-//
-//    public BiTercero getBiTercero() {
-//        return biTercero;
-//    }
-//
-//    public void setBiTercero(BiTercero biTercero) {
-//        this.biTercero = biTercero;
-//    }
-//
-//    public GnMunicipio getMunNacimiento() {
-//        return munNacimiento;
-//    }
-//
-//    public void setMunNacimiento(GnMunicipio munNacimiento) {
-//        this.munNacimiento = munNacimiento;
-//    }
+
+    public BiTercero getBiTercero() {
+        return biTercero;
+    }
+
+    public void setBiTercero(BiTercero biTercero) {
+        this.biTercero = biTercero;
+    }
+
+    public GnMunicipio getMunNacimiento() {
+        return munNacimiento;
+    }
+
+    public void setMunNacimiento(GnMunicipio munNacimiento) {
+        this.munNacimiento = munNacimiento;
+    }
 
     @Override
     public int hashCode() {

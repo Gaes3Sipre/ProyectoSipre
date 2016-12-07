@@ -80,9 +80,9 @@ public class BiBeneficiario implements Serializable {
 //    @JoinColumn(name = "codEmpleado",  referencedColumnName = "codEmpleado", nullable = false)
 //    @OneToOne(optional = true)
 //    private BiEmpleados codEmpleado;
-//    @JoinColumn(name = "munNacimiento", referencedColumnName = "codMunicipio", nullable = false)
-//    @ManyToOne(optional = false)
-//    private GnMunicipio munNacimiento;
+    @JoinColumn(name = "munNacimiento", referencedColumnName = "codMunicipio", nullable = false)
+    @ManyToOne(optional = false)
+    private GnMunicipio munNacimiento;
 
     public BiBeneficiario() {
     }
@@ -164,13 +164,13 @@ public class BiBeneficiario implements Serializable {
 //        this.codEmpleado = codEmpleado;
 //    }
 
-//    public GnMunicipio getMunNacimiento() {
-//        return munNacimiento;
-//    }
-//
-//    public void setMunNacimiento(GnMunicipio munNacimiento) {
-//        this.munNacimiento = munNacimiento;
-//    }
+    public GnMunicipio getMunNacimiento() {
+        return munNacimiento;
+    }
+
+    public void setMunNacimiento(GnMunicipio munNacimiento) {
+        this.munNacimiento = munNacimiento;
+    }
 
     @Override
     public int hashCode() {

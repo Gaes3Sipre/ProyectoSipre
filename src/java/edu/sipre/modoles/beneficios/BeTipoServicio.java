@@ -84,8 +84,8 @@ public class BeTipoServicio implements Serializable {
     @Column(name = "actHora", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date actHora;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "beTipoServicio")
-//    private List<BeTipobeneficio> beTipobeneficioList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "beTipoServicio")
+    private List<BeTipobeneficio> beTipobeneficioList;
 //    @OneToMany(mappedBy = "tipBeneficiario")
 //    private List<BiBeneficiario> biBeneficiarioList;
 
@@ -170,15 +170,15 @@ public class BeTipoServicio implements Serializable {
     public void setActHora(Date actHora) {
         this.actHora = actHora;
     }
-//
-//    public List<BeTipobeneficio> getBeTipobeneficioList() {
-//        return beTipobeneficioList;
-//    }
-//
-//    public void setBeTipobeneficioList(List<BeTipobeneficio> beTipobeneficioList) {
-//        this.beTipobeneficioList = beTipobeneficioList;
-//    }
-//
+
+    public List<BeTipobeneficio> getBeTipobeneficioList() {
+        return beTipobeneficioList;
+    }
+
+    public void setBeTipobeneficioList(List<BeTipobeneficio> beTipobeneficioList) {
+        this.beTipobeneficioList = beTipobeneficioList;
+    }
+
 //    public List<BiBeneficiario> getBiBeneficiarioList() {
 //        return biBeneficiarioList;
 //    }

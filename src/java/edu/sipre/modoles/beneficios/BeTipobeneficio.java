@@ -83,12 +83,12 @@ public class BeTipobeneficio implements Serializable {
     private Date actHora;
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codservicios")
 //    private List<Besolicitud> besolicitudList;
-//    @JoinColumn(name = "codTipoServicio", referencedColumnName = "codTipoServicio", nullable = false, insertable = false, updatable = false)
-//    @ManyToOne(optional = false)
-//    private BeTipoServicio beTipoServicio;
-//    @JoinColumn(name = "codProveedor", referencedColumnName = "codProveedor", nullable = false, insertable = false, updatable = false)
-//    @ManyToOne(optional = false)
-//    private BiProveedor biProveedor;
+    @JoinColumn(name = "codTipoServicio", referencedColumnName = "codTipoServicio", nullable = false, insertable = false, updatable = false)
+    @ManyToOne(optional = false)
+    private BeTipoServicio beTipoServicio;
+    @JoinColumn(name = "codProveedor", referencedColumnName = "codProveedor", nullable = false, insertable = false, updatable = false)
+    @ManyToOne(optional = false)
+    private BiProveedor biProveedor;
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipBeneficio")
 //    private List<PrValoresServicio> prValoresServicioList;
 
@@ -184,21 +184,21 @@ public class BeTipobeneficio implements Serializable {
 //        this.besolicitudList = besolicitudList;
 //    }
 //
-//    public BeTipoServicio getBeTipoServicio() {
-//        return beTipoServicio;
-//    }
-//
-//    public void setBeTipoServicio(BeTipoServicio beTipoServicio) {
-//        this.beTipoServicio = beTipoServicio;
-//    }
-//
-//    public BiProveedor getBiProveedor() {
-//        return biProveedor;
-//    }
-//
-//    public void setBiProveedor(BiProveedor biProveedor) {
-//        this.biProveedor = biProveedor;
-//    }
+    public BeTipoServicio getBeTipoServicio() {
+        return beTipoServicio;
+    }
+
+    public void setBeTipoServicio(BeTipoServicio beTipoServicio) {
+        this.beTipoServicio = beTipoServicio;
+    }
+
+    public BiProveedor getBiProveedor() {
+        return biProveedor;
+    }
+
+    public void setBiProveedor(BiProveedor biProveedor) {
+        this.biProveedor = biProveedor;
+    }
 //
 //    public List<PrValoresServicio> getPrValoresServicioList() {
 //        return prValoresServicioList;
