@@ -71,8 +71,8 @@ public class GnRol implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
-//    private GnDetalleRol gnDetalleRol;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
+    private GnDetalleRol gnDetalleRol;
 //    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
 //    private GnDetalleMenu gnDetalleMenu;
 
@@ -139,14 +139,14 @@ public class GnRol implements Serializable {
     public void setHorActividad(Date horActividad) {
         this.horActividad = horActividad;
     }
-//
-//    public GnDetalleRol getGnDetalleRol() {
-//        return gnDetalleRol;
-//    }
-//
-//    public void setGnDetalleRol(GnDetalleRol gnDetalleRol) {
-//        this.gnDetalleRol = gnDetalleRol;
-//    }
+
+    public GnDetalleRol getGnDetalleRol() {
+        return gnDetalleRol;
+    }
+
+    public void setGnDetalleRol(GnDetalleRol gnDetalleRol) {
+        this.gnDetalleRol = gnDetalleRol;
+    }
 //
 //    public GnDetalleMenu getGnDetalleMenu() {
 //        return gnDetalleMenu;

@@ -71,8 +71,8 @@ public class GnUsuario implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codUsuario")
-//    private List<GnDetalleRol> gnDetalleRolList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codUsuario")
+    private List<GnDetalleRol> gnDetalleRolList;
     @JoinColumn(name = "codTercero", referencedColumnName = "codTercero", nullable = false)
     @ManyToOne(optional = false)
     private BiTercero codTercero;
@@ -132,14 +132,14 @@ public class GnUsuario implements Serializable {
         this.horActividad = horActividad;
     }
 
-//    public List<GnDetalleRol> getGnDetalleRolList() {
-//        return gnDetalleRolList;
-//    }
-//
-//    public void setGnDetalleRolList(List<GnDetalleRol> gnDetalleRolList) {
-//        this.gnDetalleRolList = gnDetalleRolList;
-//    }
-//
+    public List<GnDetalleRol> getGnDetalleRolList() {
+        return gnDetalleRolList;
+    }
+
+    public void setGnDetalleRolList(List<GnDetalleRol> gnDetalleRolList) {
+        this.gnDetalleRolList = gnDetalleRolList;
+    }
+
     public BiTercero getCodTercero() {
         return codTercero;
     }

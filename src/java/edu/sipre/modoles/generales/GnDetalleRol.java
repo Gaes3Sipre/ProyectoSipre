@@ -62,9 +62,9 @@ public class GnDetalleRol implements Serializable {
     @JoinColumn(name = "codRol", referencedColumnName = "codRol", nullable = false, insertable = false, updatable = false)
     @OneToOne(optional = false)
     private GnRol gnRol;
-//    @JoinColumn(name = "codUsuario", referencedColumnName = "codUsuario", nullable = false)
-//    @ManyToOne(optional = false)
-//    private GnUsuario codUsuario;
+    @JoinColumn(name = "codUsuario", referencedColumnName = "codUsuario", nullable = false)
+    @ManyToOne(optional = false)
+    private GnUsuario codUsuario;
 
     public GnDetalleRol() {
     }
@@ -119,14 +119,14 @@ public class GnDetalleRol implements Serializable {
     public void setGnRol(GnRol gnRol) {
         this.gnRol = gnRol;
     }
-//
-//    public GnUsuario getCodUsuario() {
-//        return codUsuario;
-//    }
-//
-//    public void setCodUsuario(GnUsuario codUsuario) {
-//        this.codUsuario = codUsuario;
-//    }
+
+    public GnUsuario getCodUsuario() {
+        return codUsuario;
+    }
+
+    public void setCodUsuario(GnUsuario codUsuario) {
+        this.codUsuario = codUsuario;
+    }
 
     @Override
     public int hashCode() {
