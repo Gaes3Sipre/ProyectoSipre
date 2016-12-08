@@ -9,13 +9,16 @@ import edu.sipre.modoles.generales.GnDetalleMenu;
 import edu.sipre.modoles.generales.GnDetalleRol;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -32,13 +35,14 @@ import javax.validation.constraints.Size;
 @Table(name = "Gn_Roles", uniqueConstraints = {
     @UniqueConstraint(columnNames = {"codRol"})})
 @NamedQueries({
-    @NamedQuery(name = "GnRol.findAll", query = "SELECT g FROM GnRol g")
-    , @NamedQuery(name = "GnRol.findByCodRol", query = "SELECT g FROM GnRol g WHERE g.codRol = :codRol")
-    , @NamedQuery(name = "GnRol.findByNomRol", query = "SELECT g FROM GnRol g WHERE g.nomRol = :nomRol")
-    , @NamedQuery(name = "GnRol.findByTipRol", query = "SELECT g FROM GnRol g WHERE g.tipRol = :tipRol")
-    , @NamedQuery(name = "GnRol.findByUsuActividad", query = "SELECT g FROM GnRol g WHERE g.usuActividad = :usuActividad")
-    , @NamedQuery(name = "GnRol.findByTipActividad", query = "SELECT g FROM GnRol g WHERE g.tipActividad = :tipActividad")
-    , @NamedQuery(name = "GnRol.findByHorActividad", query = "SELECT g FROM GnRol g WHERE g.horActividad = :horActividad")})
+    @NamedQuery(name = "GnRol.todos", query = "SELECT g FROM GnRol g")
+    , @NamedQuery(name = "GnRol.codRol", query = "SELECT g FROM GnRol g WHERE g.codRol = :codRol")
+    , @NamedQuery(name = "GnRol.nomRol", query = "SELECT g FROM GnRol g WHERE g.nomRol = :nomRol")
+    , @NamedQuery(name = "GnRol.tipRol", query = "SELECT g FROM GnRol g WHERE g.tipRol = :tipRol")
+    , @NamedQuery(name = "GnRol.usuActividad", query = "SELECT g FROM GnRol g WHERE g.usuActividad = :usuActividad")
+    , @NamedQuery(name = "GnRol.tipActividad", query = "SELECT g FROM GnRol g WHERE g.tipActividad = :tipActividad")
+    , @NamedQuery(name = "GnRol.codDetalleRol", query = "SELECT g FROM GnRol g WHERE g.codDetalleRolList = :codDetalleRolList")
+    , @NamedQuery(name = "GnRol.horActividad", query = "SELECT g FROM GnRol g WHERE g.horActividad = :horActividad")})
 public class GnRol implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -71,8 +75,8 @@ public class GnRol implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
-    private GnDetalleRol gnDetalleRol;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codRol")
+    private List<GnDetalleRol> codDetalleRolList;
 //    @OneToOne(cascade = CascadeType.ALL, mappedBy = "gnRol")
 //    private GnDetalleMenu gnDetalleMenu;
 
@@ -140,13 +144,13 @@ public class GnRol implements Serializable {
         this.horActividad = horActividad;
     }
 
-    public GnDetalleRol getGnDetalleRol() {
-        return gnDetalleRol;
+    public List<GnDetalleRol> getCodDetalleRol() {
+        return codDetalleRolList;
     }
 
-    public void setGnDetalleRol(GnDetalleRol gnDetalleRol) {
-        this.gnDetalleRol = gnDetalleRol;
-    }
+    public void setCodDetalleRol(List<GnDetalleRol> codDetalleRol) {
+        this.codDetalleRolList = codDetalleRol;
+    }   
 //
 //    public GnDetalleMenu getGnDetalleMenu() {
 //        return gnDetalleMenu;

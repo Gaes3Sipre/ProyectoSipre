@@ -10,9 +10,12 @@ import edu.sipre.modoles.generales.GnRol;
 import edu.sipre.modoles.generales.GnUsuario;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 /**
@@ -21,22 +24,20 @@ import javax.persistence.TypedQuery;
  */
 public class DetalleRolDAO_SQL extends DetalleRolDAO {
 
-    
     @Override
-    public List<String> buscarRolesUsuario(String codUsuario) {
+    public List<GnDetalleRol> buscarRolesUsuario(String codUsuario) {
         EntityManager em = Persistence.createEntityManagerFactory("SiprePU").createEntityManager();
-        TypedQuery<GnDetalleRol> queryDetalleRol = em.createNamedQuery("GnDetalleRol.RolesUsuario", GnDetalleRol.class);
-        queryDetalleRol.setParameter("codUsuario", codUsuario);
-        List<GnRol> resultado = (List<GnRol>) queryDetalleRol.getSingleResult().getGnRol();
-        List<String> nombreRoles = new ArrayList<>();
-
-        for (int i = 0; resultado.size() <= i; i++) {
-            nombreRoles.add(resultado.get(i).getNomRol());
-
-        }
-        return nombreRoles;
+        
+        TypedQuery<GnUsuario> queryUSuario = em.createNamedQuery("GnUsuario.codUsuario", GnUsuario.class);
+        queryUSuario.setParameter("codUsuario", codUsuario);
+        GnUsuario usuario = queryUSuario.getSingleResult();
+        
+        TypedQuery<GnDetalleRol> queryDRol = em.createNamedQuery("GnDetalleRol.codUsuario", GnDetalleRol.class);
+        queryDRol.setParameter("codUsuario", usuario);
+        List<GnDetalleRol> detalleRol = queryDRol.getResultList();
+ 
+        return  detalleRol;
     }
-    
 
     @Override
     public GnDetalleRol buscarPorPK(Integer pk) {

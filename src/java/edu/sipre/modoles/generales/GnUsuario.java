@@ -35,12 +35,12 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "Gn_Usuarios")
 @NamedQueries({
-    @NamedQuery(name = "GnUsuario.findAll", query = "SELECT g FROM GnUsuario g"),
-    @NamedQuery(name = "GnUsuario.findByCodUsuario", query = "SELECT g FROM GnUsuario g WHERE g.codUsuario = :codUsuario"),
-    @NamedQuery(name = "GnUsuario.findByClave", query = "SELECT g FROM GnUsuario g WHERE g.clave = :clave"),
-    @NamedQuery(name = "GnUsuario.findByUsuActividad", query = "SELECT g FROM GnUsuario g WHERE g.usuActividad = :usuActividad"),
-    @NamedQuery(name = "GnUsuario.findByTipActividad", query = "SELECT g FROM GnUsuario g WHERE g.tipActividad = :tipActividad"),
-    @NamedQuery(name = "GnUsuario.findByHorActividad", query = "SELECT g FROM GnUsuario g WHERE g.horActividad = :horActividad"),
+    @NamedQuery(name = "GnUsuario.todos", query = "SELECT g FROM GnUsuario g"),
+    @NamedQuery(name = "GnUsuario.codUsuario", query = "SELECT g FROM GnUsuario g WHERE g.codUsuario = :codUsuario"),
+    @NamedQuery(name = "GnUsuario.clave", query = "SELECT g FROM GnUsuario g WHERE g.clave = :clave"),
+    @NamedQuery(name = "GnUsuario.usuActividad", query = "SELECT g FROM GnUsuario g WHERE g.usuActividad = :usuActividad"),
+    @NamedQuery(name = "GnUsuario.tipActividad", query = "SELECT g FROM GnUsuario g WHERE g.tipActividad = :tipActividad"),
+    @NamedQuery(name = "GnUsuario.horActividad", query = "SELECT g FROM GnUsuario g WHERE g.horActividad = :horActividad"),
     @NamedQuery(name = "GnUsuario.loguin", query = "SELECT g FROM GnUsuario g WHERE g.codUsuario = :codUsuario and g.clave=:clave")})
 
 public class GnUsuario implements Serializable {

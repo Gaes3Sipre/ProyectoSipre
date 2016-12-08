@@ -11,21 +11,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>SIPRE</title>
-    <link rel="shortcut icon" href="img/favico.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favico.jpg" type="image/x-icon">
     <!-- CSS-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/estilos.css" rel="stylesheet">
-    <link href="css/themes/theme-1-forgedsteel-danger/bemat-admin.css" rel="stylesheet" id="info-bg">
-    <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/estilos.css" rel="stylesheet">
+    <link href="../css/themes/theme-1-forgedsteel-danger/bemat-admin.css" rel="stylesheet" id="info-bg">
+    <link rel="stylesheet" href="../css/validationEngine.jquery.css" type="text/css"/>
     <!-- Core Scripts - Include with every page -->
-    <script src="js/jquery-1.12.2.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/modernizr-custom-3.3.1.js" type="text/javascript"></script>
-    <script src="js/LABjs/LAB.min.js" type="text/javascript"></script>
-    <script src="js/bemat-admin-common.min.js" type="text/javascript"></script>
-    <script src= "js/jquery.validationEngine-es.js"  type= "text/javascript"  charset= "utf-8" ></script> 
-    <script src= "js/jquery.validationEngine.js"  type= "text/javascript"  charset= "utf-8" ></script>
+    <script src="../js/jquery-1.12.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui.custom.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/modernizr-custom-3.3.1.js" type="text/javascript"></script>
+    <script src="../js/LABjs/LAB.min.js" type="text/javascript"></script>
+    <script src="../js/bemat-admin-common.min.js" type="text/javascript"></script>
+    <script src= "../js/jquery.validationEngine-es.js"  type= "text/javascript"  charset= "utf-8" ></script> 
+    <script src= "../js/jquery.validationEngine.js"  type= "text/javascript"  charset= "utf-8" ></script>
     <style type="text/css">
         .input-field div.error{
             position: relative;

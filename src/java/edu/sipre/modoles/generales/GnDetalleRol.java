@@ -8,6 +8,7 @@ package edu.sipre.modoles.generales;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,12 +33,12 @@ import javax.validation.constraints.Size;
 @Table(name = "Gn_DetalleRol", uniqueConstraints = {
     @UniqueConstraint(columnNames = {"codRol"})})
 @NamedQueries({
-    @NamedQuery(name = "GnDetalleRol.findAll", query = "SELECT g FROM GnDetalleRol g")
-    , @NamedQuery(name = "GnDetalleRol.findByCodRol", query = "SELECT g FROM GnDetalleRol g WHERE g.codRol = :codRol")
-    , @NamedQuery(name = "GnDetalleRol.findByUsuActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.usuActividad = :usuActividad")
-    , @NamedQuery(name = "GnDetalleRol.findByTipActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.tipActividad = :tipActividad")
-    , @NamedQuery(name = "GnDetalleRol.RolesUsuario", query = "SELECT g FROM GnDetalleRol g WHERE g.codUsuario = :codUsuario")
-    , @NamedQuery(name = "GnDetalleRol.findByHorActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.horActividad = :horActividad")})
+    @NamedQuery(name = "GnDetalleRol.todos", query = "SELECT g FROM GnDetalleRol g")
+    , @NamedQuery(name = "GnDetalleRol.codRol", query = "SELECT g FROM GnDetalleRol g WHERE g.codRol = :codRol")
+    , @NamedQuery(name = "GnDetalleRol.usuActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.usuActividad = :usuActividad")
+    , @NamedQuery(name = "GnDetalleRol.tipActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.tipActividad = :tipActividad")
+    , @NamedQuery(name = "GnDetalleRol.codUsuario", query = "SELECT g FROM GnDetalleRol g WHERE g.codUsuario = :codUsuario")
+    , @NamedQuery(name = "GnDetalleRol.horActividad", query = "SELECT g FROM GnDetalleRol g WHERE g.horActividad = :horActividad")})
 public class GnDetalleRol implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -60,9 +61,6 @@ public class GnDetalleRol implements Serializable {
     @Column(name = "horActividad", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date horActividad;
-    @JoinColumn(name = "codRol", referencedColumnName = "codRol", nullable = false, insertable = false, updatable = false)
-    @OneToOne(optional = false)
-    private GnRol gnRol;
     @JoinColumn(name = "codUsuario", referencedColumnName = "codUsuario", nullable = false)
     @ManyToOne(optional = false)
     private GnUsuario codUsuario;
@@ -91,7 +89,7 @@ public class GnDetalleRol implements Serializable {
     public void setCodDetalleRol(Integer codDetalleRol) {
         this.codDetalleRol = codDetalleRol;
     }
-    
+
     public GnRol getCodRol() {
         return codRol;
     }
@@ -122,14 +120,6 @@ public class GnDetalleRol implements Serializable {
 
     public void setHorActividad(Date horActividad) {
         this.horActividad = horActividad;
-    }
-
-    public GnRol getGnRol() {
-        return gnRol;
-    }
-
-    public void setGnRol(GnRol gnRol) {
-        this.gnRol = gnRol;
     }
 
     public GnUsuario getCodUsuario() {

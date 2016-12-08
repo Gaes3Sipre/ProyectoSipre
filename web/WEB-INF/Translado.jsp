@@ -8,7 +8,7 @@
 <div id="splash-screen" class="layout layout-align-center"> <!--inicio traslado-->
     <div class="logo-box logo-box-info layout layout-column">
         <div>
-            <img src="img/favico.png" style="width: 150px;"/>
+            <img src="../img/favico.png" style="width: 150px;"/>
         </div>
         <div class="logo-label headline-inverse">
             <p>SIPRE</p>

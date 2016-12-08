@@ -23,4 +23,5 @@ public abstract class AbstractFacadeDAO {
     }
     
     public abstract UsuarioDAO getUsuarioDAO();
+    public abstract DetalleRolDAO getDetalleRolDAO();
 }

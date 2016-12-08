@@ -10,10 +10,15 @@ package edu.sipre.modoles.generales.dao;
  * @author SENA
  */
 public class FacadeSQL extends AbstractFacadeDAO{
-
+   
     @Override
     public UsuarioDAO getUsuarioDAO() {
         return new UsuarioDAO_SQL();
+    }
+
+    @Override
+    public DetalleRolDAO getDetalleRolDAO() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

@@ -6,8 +6,7 @@
 package edu.sipre.modoles.generales.dao;
 
 import edu.sipre.modoles.generales.GnDetalleRol;
-import edu.sipre.modoles.generales.GnRol;
-import java.sql.SQLException;
+import edu.sipre.modoles.generales.GnUsuario;
 import java.util.List;
 
 
@@ -17,6 +16,6 @@ import java.util.List;
  */
 public abstract class DetalleRolDAO implements DAO<Integer, GnDetalleRol>{
     
- public abstract List<String> buscarRolesUsuario(String codUsuario);
+ public abstract List<GnDetalleRol> buscarRolesUsuario(String codUsuario);
 
 }

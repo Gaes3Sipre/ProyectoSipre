@@ -33,8 +33,12 @@ public class Loguin extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+           
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(false);
         try (PrintWriter out = response.getWriter()) {
@@ -42,19 +46,22 @@ public class Loguin extends HttpServlet {
             String usuario = request.getParameter("inputNomUsu");
             String clave = request.getParameter("inputPassword");
             String boton = request.getParameter("loguin");
+            session.setAttribute("sipreUS", usuario);
+        
             UsuarioDAO uDAO = AbstractFacadeDAO.getFacadeDAO(1).getUsuarioDAO();
             GnUsuario gu = uDAO.login(usuario, clave);
             if (gu != null) {
                 session.setAttribute("user", usuario);
                 response.sendRedirect(request.getContextPath() + "/app/inicio.jsp");
             } else {
-
-                response.setContentType("text/html");
-                out.println("<script language='JavaScript'>");
-                out.print(" function validacion()");
-                out.println("</script>");
+//
+//                response.setContentType("text/html");
+//                out.println("<script language='JavaScript'>");
+//                out.print(" function validacion()");
+//                out.println("</script>");
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
-            }} catch (NumberFormatException exception) {
+            }
+        } catch (NumberFormatException exception) {
             System.out.println("hdjshasjdhjahdjkshajkd");
         } catch (Exception e) {
             e.printStackTrace();
