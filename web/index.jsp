@@ -16,7 +16,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Sistema para al Administracion de Recusos Empresariales - SIPRE">
         <title>Autenticacion - SIPRE</title>
-        <link rel="shortcut icon" href="favico.png" type="image/x-icon">
+        <link rel="shortcut icon" href="img/favico.png" type="image/x-icon">
 
         <!-- Bootstrap Core CSS - Include with every page -->
         <link href="css/estilos.css" rel="stylesheet" id="theme-switcher">		
@@ -49,7 +49,7 @@
                             <div class="authentication-header">
                                 <div class="logo-box logo-box-primary-light padding-top-4">
                                     <div class="logo">
-                                        <img src="favico.jpg" style="width: 100px; height: 100px"/>
+                                        <img src="img/favico.jpg" style="width: 100px; height: 100px"/>
                                     </div>
                                 </div>
                                 <span>Inicio de Sección</span>

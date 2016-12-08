@@ -4,6 +4,9 @@
     Author     : ERICK AYALA
 --%>
 
+<%@page import="javax.persistence.Persistence"%>
+<%@page import="javax.persistence.EntityManager"%>
+<%@page import="edu.sipre.modoles.generales.GnRol"%>
 <%@page import="edu.sipre.modoles.generales.GnDetalleRol"%>
 <%@page import="edu.sipre.modoles.generales.GnUsuario"%>
 <%@page import="java.util.List"%>
@@ -90,26 +93,29 @@
                                 </li>
                             </ul>
                         </div>
+                        <div id="header-toolbar">
+                            <ul class=" dropdown toolbar toolbar-left">
+                                <a id="sidebar-toggle" href="javascript:void(0);" role="button" data-toggle="dropdown" data-container="body" data-placement="bottom" title="Seleccione Perfil"><i class="material-icons">directions_walk</i> <span class="caret"></span></a>
+                                <table>
+                                    <tbody>
+                                        <%
+                                            HttpSession objSesion = request.getSession(true);
+                                            String usuario = (String) objSesion.getAttribute("sipreUS");
+                                            DetalleRolDAO_SQL dr = new DetalleRolDAO_SQL();
+                                            List<GnDetalleRol> Roles = dr.buscarRolesUsuario(usuario);
+                                            EntityManager em = Persistence.createEntityManagerFactory("SiprePU").createEntityManager();
+                                            for (int i = 0; i < Roles.size(); i++) {
+                                        %>
+                                        <tr>
+                                            <td><%Roles.get(i).getCodRol().toString();%></td>
+                                        </tr>
+                                        <%};%>
+                                    </tbody>
+                                </table>
+                            </ul>
+                        </div>
                     </div><!-- /#header-toolbar -->
-                </header>        <div id="header-toolbar">
-                    <ul class=" dropdown toolbar toolbar-left">
-                        <a id="sidebar-toggle" href="javascript:void(0);" role="button" data-toggle="dropdown" data-container="body" data-placement="bottom" title="Seleccione Perfil"><i class="material-icons">directions_walk</i> <span class="caret"></span></a>
-                            <%  
-                                HttpSession objSesion = request.getSession(false);
-                                String usuario = (String) objSesion.getAttribute("sipreUS");
-                                DetalleRolDAO_SQL dr = new DetalleRolDAO_SQL();
-                                List<GnDetalleRol> Roles = dr.buscarRolesUsuario(usuario);
-                                for (int i = 0; i > Roles.size(); i++) {
-                                  
-                            %>
-                        <ul id="language-selector-list" class="dropdown-menu">
-                            <li class="active">
-                                <span class="flag flag-us" alt="<% Roles.get(i).getCodRol().getNomRol();%>" value="<% Roles.get(i).getCodRol().getCodRol();%>"></span>
-                            </li>
-                        </ul>
-                        <%}%>
-                    </ul>
-                </div>
+                </header>       
                 <jsp:include page='../WEB-INF/footer.jsp' flush="true"/> 
             </section><!-- /#right-content -->
 
